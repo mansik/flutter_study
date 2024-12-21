@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+/// 제스처 관련 위젯: OutlinedButton
 class OutlinedButtonWidgetExample extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
