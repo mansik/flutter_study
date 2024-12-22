@@ -1,6 +1,7 @@
 # basic_widgets
 
 A new Flutter project.
+p.141 6. 위젯
 
 ## Getting Started
 
@@ -35,4 +36,4 @@ samples, guidance on mobile development, and a full API reference.
 - Delete line at caret: Ctrl + Y
 - 
 - Run: Shift + F10
-- `hot reload: Ctrl + \`
+- `hot reload: Ctrl + \`, Ctrl + S(save)해도 hot reload됨.
