@@ -38,9 +38,9 @@
   
 ## pubspec.yaml 파일
 
-[youtube](https://youtu.be/1GRKklx4xeo)
 프로젝트에서 사용할 폰트, 이미지, 외부 플러그인 등을 지정하는데 사용한다.  
-yaml 파일을 수정 후에는 반드시 앱을 다시 실행해야 한다.
+yaml 파일을 수정 후에는 반드시 앱을 다시 실행해야 한다.  
+[youtube](https://youtu.be/1GRKklx4xeo)
 
 ## How to add plugin
 
