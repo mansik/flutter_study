@@ -20,7 +20,7 @@ samples, guidance on mobile development, and a full API reference.
 - pub.dev: 플러터 오픈소스 저장소
 - pubspec.yaml 파일에 플러그인을 추가하고 [pub get] 버튼을 눌러주면 등록한 플러그인을 사용할 수 있다.
 - `pubspec.yaml 파일`
-```flutter
+```yaml
 dependencies:
 
     webview_flutter: 4.10.0 # 웹뷰 플러그인 추가 -> flutter command 에 'Pub get' 버튼 눌러서 현재 프로젝트에 적용
