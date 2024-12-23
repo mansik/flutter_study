@@ -49,7 +49,7 @@ add <uses-permission android:name="android.permission.INTERNET" />
 ```
 
 ### allow http protocol in the Android manifest
-
+https만 사용하면 필요가 없으며, https가 아닌 http로 사이트를 호출할 때 필요
 - /android/app/src/main/Androidmainfest.xml
   add android:usesCleartextTraffic="true"
 ```xml
