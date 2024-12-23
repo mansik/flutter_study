@@ -22,8 +22,8 @@ samples, guidance on mobile development, and a full API reference.
 ### [add plugin pubspec.yaml](https://pub.dev/packages/webview_flutter/install)
 
 webview_flutter: ^4.10.0 을 사용하면 
-- /android/app/build.gradle의 minSdk = 21 이상,  되어야 하며
--  /android/settings.gladle의 "com.android.application" version 이 "8.2.0" 이상 되어야 한다.
+- /android/settings.gladle의 "com.android.application" version 이 "8.2.1" 이상 되어야 한다.
+- /android/app/build.gradle의 minSdk를 지정할 경우  minSdk = 21 이상 되어야 한다.
 ```yaml
 dependencies:
   flutter:
@@ -33,6 +33,17 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
   webview_flutter: ^4.10.0
+```
+
+### change gladle plugin version in android/settings.gladle
+- /android/settings.gladle
+  change version: "com.android.application" version "8.2.1" apply false
+```gladle 
+plugins {
+    id "dev.flutter.flutter-plugin-loader" version "1.0.0"
+    id "com.android.application" version "8.2.1" apply false // 8.1.0 -> 8.2.1
+    id "org.jetbrains.kotlin.android" version "1.8.22" apply false
+}
 ```
 
 ### [add Authority](https://docs.flutter.dev/data-and-backend/networking)
@@ -96,17 +107,6 @@ android {
     buildTypes {
         ...
     }
-}
-```
-
-### change gladle plugin version in android/settings.gladle
-- /android/settings.gladle
-change version: "com.android.application" version "8.2.0" apply false 
-```gladle 
-plugins {
-    id "dev.flutter.flutter-plugin-loader" version "1.0.0"
-    id "com.android.application" version "8.2.1" apply false // 8.1.0 -> 8.2.1
-    id "org.jetbrains.kotlin.android" version "1.8.22" apply false
 }
 ```
 
