@@ -2,17 +2,26 @@
 
 코드팩토리의 플러터 프로그래밍 2판
 
-## 작성방법
+## language version
+
+- flutter : 3.27.1
+- dart: 3.6.0
+
+## Environment Device Manager
+
+android: Pixel 8 API 34
+
+## How to create project
 
 1. new flutter project -> empty project로 생성 후
 2. 개별 프로젝트는 이 프로젝트의 아래에 위치해서 생성함
 
 ## Project fold structure
 
-- screen
-- component
-- model
-- const
+- screens
+- components
+- models
+- consts
   
 ## Android Studio shortcut
 
@@ -49,12 +58,14 @@ yaml 파일을 수정 후에는 반드시 앱을 다시 실행해야 한다.
 - `pubspec.yaml 파일`
 ```yaml
 dependencies:
-
-    webview_flutter: 4.10.0 # 웹뷰 플러그인 추가 -> flutter command 에 'Pub get' 버튼 눌러서 현재 프로젝트에 적용
+  # webview_flutter: ^4.10.0 하면 
+  # /android/settings.gradle 에서 pluings {  id "com.android.application" version "8.2.1" ...로 해줘야 한다.
+  webview_flutter: 4.10.0 # 웹뷰 플러그인 추가 -> flutter command 에 'Pub get' 버튼 눌러서 현재 프로젝트에 적용
 ```
 - yaml 파일을 수정 후에는 반드시 앱을 다시 실행해야 한다.
 
 ### plugins
+
 - sensors_plus: Accelerometer(핸드폰의 움직이는 속도 측정), Gyroscope(회전 측정), Magnetometer(자기장 측정)
 - geolocator: gps
 - camera
@@ -62,19 +73,24 @@ dependencies:
 - wifi_iot: wifi
 
 ## Color Hex Code
+
 ```dart
 color: Color(0xFFF99231), // 0x(16진수), FF: 불투명도 100%, F99231: 색상 코드
 ```
 
 ## Widgets
+
 위젯의 2가지 형태
 - stateful widget: 위젯 내부에서 값이 변경되었을 때 위젯 자체에서 다시 렌더링을 실행시킬 수 있는 위젯, 자동완성: stful 탭
 - stateless widget: 위젯 내부에서 값이 변경되어도 위젯 자체적으로는 다시 렌더링할 수 없는 위젯, stless 탭탭
+p.221
 
 ### Text widget
+
 - Text
 
 ### Gesture related widgets
+
 - Botton
 - ElevatedButton
 - OutlinedButton
@@ -83,12 +99,14 @@ color: Color(0xFFF99231), // 0x(16진수), FF: 불투명도 100%, F99231: 색상
 - FloatingActionButton
 
 ### Design related widgets
+
 - Container
 - SizedBox
 - Padding
 - SafeArea
 
 ### Layout related widgets
+
 - Row
 - Column
 - Flexible
@@ -109,7 +127,7 @@ several constructors: Image, Image.asset, Image.network, Image.file, Image.memor
 5. Colors.orange -> Color(0xFFF99231)로 수정 : 0x(16진수), FF: 불투명도 100%, F99231: 색상 코드 
 
 
-## 연습용 앱 만들기: splash screen
+## splash screen app
 
 p.175 7.4 연습용 앱 만들기: 스플래시 스크린 앱
 
@@ -135,5 +153,19 @@ p.175 7.4 연습용 앱 만들기: 스플래시 스크린 앱
         2. Column 위젯은 세로로 최대한 크기를 차지하고 가로로는 최소한 크기만 차지한다.
         3. Row 위젯은 가로로 최대한 크기를 차지하고 세로로 최소 크기를 차지한다.
     5. CircularProgressIndicator 색 변경: valueColor 추가
+
+
+### blog web app
+
+webview, appbar
+
+### web app
+
+webview, appbar
+
+### image carousel app: 전자액자
+
+stateful, timer.periodic
+
 
 
