@@ -16,7 +16,7 @@ class _HomeScreenState extends State<HomeScreen> {
   final PageController pageController = PageController();
 
   // initState() 함수에서 Timer.periodic(); 함수 실행해서 주기적으로 콜백 함수 호출한다.
-  // 마우스 우측 -> Generate..(Alter + Insert) -> initState  클릭
+  // 마우스 우측 -> Generate..(Alter + Insert) -> override Methods.. - initState  클릭
   // initState()는 핫 리로드로 반영이 안된다. 재실행해야 한다.
   // 이유는 initState()는 State가 생성될 때 딱 한번만 실행된다.
   @override

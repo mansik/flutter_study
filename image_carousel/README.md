@@ -32,13 +32,11 @@ p. 220
     - StatefulWidget 생성자의 매개변수가 변경됐을 때의 생명주기
     - State 자체적으로 build()를 재실행할 때의 생명주기
 
-### asset fold
+### create asset - images fold
 
 asset: 프로젝트에 사용되는 동영상, 이미지, 음악등의 파일을 의미
 - asset
   - images
-  - movies
-  - musics
 
 ### add assets: on pubspec.yaml
 
@@ -163,7 +161,7 @@ class _HomeScreenState extends State<HomeScreen> {
   final PageController pageController = PageController();
   
   // initState() 함수에서 Timer.periodic(); 함수 실행해서 주기적으로 콜백 함수 호출한다.
-  // 마우스 우측 -> Generate..(Alter + Insert) -> initState  클릭
+  // 마우스 우측 -> Generate..(Alter + Insert) -> override Methods.. - initState  클릭
   // initState()는 핫 리로드로 반영이 안된다.
   // 이유는 initState()는 State가 생성될 때 딱 한번만 실행된다.
   @override
