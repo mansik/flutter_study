@@ -6,7 +6,7 @@ p. 220
 전자 액자: 좌, 우로 스와이프해서 이미지 슬라이딩  
 앱 로딩되면 주기적으로 이미지 슬라이딩
 
-stateful, timer.periodic
+StatefulWidget, Timer.periodic, PageView, SystemChrome, 위젯 생명주기 
 
 ## Getting Started
 

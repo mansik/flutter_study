@@ -1,8 +1,8 @@
 # blog_wep_app
 
 A new Flutter project.
-- AppBar
-- WebView
+
+AppBar, WebView, 콜백 함수, 네이티브 설정
 
 ## Getting Started
 
