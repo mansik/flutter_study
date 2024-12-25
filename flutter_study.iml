@@ -9,6 +9,27 @@
       <excludeFolder url="file://$MODULE_DIR$/hello_world/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/hello_world/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/hello_world/build" />
+      <excludeFolder url="file://$MODULE_DIR$/add_plugin/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/add_plugin/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/add_plugin/build" />
+      <excludeFolder url="file://$MODULE_DIR$/blog_wep_app/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/blog_wep_app/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/blog_wep_app/build" />
+      <excludeFolder url="file://$MODULE_DIR$/image_carousel/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/image_carousel/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/image_carousel/build" />
+      <excludeFolder url="file://$MODULE_DIR$/image_carousel_test/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/image_carousel_test/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/image_carousel_test/build" />
+      <excludeFolder url="file://$MODULE_DIR$/splash_screen/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/splash_screen/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/splash_screen/build" />
+      <excludeFolder url="file://$MODULE_DIR$/u_and_i/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/u_and_i/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/u_and_i/build" />
+      <excludeFolder url="file://$MODULE_DIR$/web_app/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/web_app/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/web_app/build" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Dart SDK" level="project" />

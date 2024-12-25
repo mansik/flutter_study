@@ -8,6 +8,18 @@ p. 220
 
 StatefulWidget, Timer.periodic, PageView, SystemChrome, 위젯 생명주기 
 
+## Features
+
+- 좌우로 스와이프해서 이미지 변경
+- 특정 시간이 지나면 자동으로 롤링
+- 이미지 화면에 꽉 차게 하기
+- 상태바 색상 변경하기
+
+## Usage
+
+- 앱을 실행하면 이미지가 자동으로 롤링
+- 좌우로 스와이프해서 이미지 변경가능
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
