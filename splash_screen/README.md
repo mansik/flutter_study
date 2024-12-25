@@ -1,13 +1,40 @@
 # splash_screen
 
 A new Flutter project.
+
 p.175 7.4 splash screen
 
-1. 기본 위젯 만들기: body: Center: splash_screen_1.dart 
+Container, Row, Column, Image
+
+## Features
+
+- 앱이 로딩되는 동안 보이는 스플래시 스크린 화면
+
+## Usage
+
+- 앱을 실행하면 스플래시 스크린이 보임
+
+## Getting Started
+
+This project is a starting point for a Flutter application.
+
+A few resources to get you started if this is your first Flutter project:
+
+- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
+- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+
+For help getting started with Flutter development, view the
+[online documentation](https://docs.flutter.dev/), which offers tutorials,
+samples, guidance on mobile development, and a full API reference.
+
+
+## Steps
+
+1. 기본 위젯 만들기: body: Center: splash_screen_1.dart
 2. 배경색 변경하기: body: Container로 수정: splash_screen_2.dart
 3. 배경 바꾸기
    1. create `assets` fold
-   2. fix pubspec.yaml -> click `pub get` 
+   2. fix pubspec.yaml -> click `pub get`
     ```yaml
       assets: # 주석 해제
         - assets/ # 폴더 추가
@@ -25,16 +52,3 @@ p.175 7.4 splash screen
       2. Column 위젯은 세로로 최대한 크기를 차지하고 가로로는 최소한 크기만 차지한다.
       3. Row 위젯은 가로로 최대한 크기를 차지하고 세로로 최소 크기를 차지한다.
    5. CircularProgressIndicator 색 변경: valueColor 추가
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
