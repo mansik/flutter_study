@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// _CoupleImage widget 구현, Image
+/// _DDay widget 구현, add text, icon
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
@@ -32,7 +32,33 @@ class HomeScreen extends StatelessWidget {
 class _DDay extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Text('DDay widget');
+    return Column(
+      children: [
+        const SizedBox(height: 16.0), // 공백
+        Text(
+          'U&I',
+        ),
+        const SizedBox(height: 16.0),
+        Text(
+          '우리 처음 만난 날',
+        ),
+        const SizedBox(height: 16.0),
+        Text(
+          '2024.12.25',
+        ),
+        const SizedBox(height: 16.0),
+        IconButton(
+          onPressed: () {},
+          icon: Icon(
+            Icons.favorite,
+          ),
+        ),
+        const SizedBox(height: 16.0),
+        Text(
+          'D+365',
+        ),
+      ],
+    );
   }
 }
 

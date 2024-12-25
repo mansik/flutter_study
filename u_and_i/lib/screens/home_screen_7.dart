@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// _CoupleImage widget 구현, Image
+/// add style to Text widget in _DDay
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
@@ -32,7 +32,41 @@ class HomeScreen extends StatelessWidget {
 class _DDay extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Text('DDay widget');
+    // 1. 테마 불러오기
+    final textTheme = Theme.of(context).textTheme;
+
+    return Column(
+      children: [
+        const SizedBox(height: 16.0), // 공백
+        Text(
+          'U&I',
+          style: textTheme.headlineLarge, // 2. 스타일 적용
+        ),
+        const SizedBox(height: 16.0),
+        Text(
+          '우리 처음 만난 날',
+          style: textTheme.bodyLarge,
+        ),
+        const SizedBox(height: 16.0),
+        Text(
+          '2024.12.25',
+          style: textTheme.bodyMedium,
+        ),
+        const SizedBox(height: 16.0),
+        IconButton(
+          onPressed: () {},
+          icon: Icon(
+            Icons.favorite,
+            color: Colors.red,
+          ),
+        ),
+        const SizedBox(height: 16.0),
+        Text(
+          'D+365',
+          style: textTheme.headlineMedium,
+        ),
+      ],
+    );
   }
 }
 

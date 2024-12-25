@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+/// add Expanded to _CoupleImage widget
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
