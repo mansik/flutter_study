@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+/// CupertinoDatePicker의 날짜 값이 변경될 때마다 firstDay값을 변경하기
+///
+/// setState() 함수 구현
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 

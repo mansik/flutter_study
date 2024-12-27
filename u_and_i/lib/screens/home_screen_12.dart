@@ -1,6 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+/// use setState()
+///
+/// (6.1~)
+/// setState()를 이용해서 StatefulWidget의 상태관리를 하며, build()가 재실행 된다.
+/// - setState(): 매개변수에 함수를 입력하고, 함수에 변경하고 싶은 변숫값을 지정해서 사용한다.
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -41,45 +45,11 @@ class _HomeScreenState extends State<HomeScreen> {
 
   // 4.4. Heart button 을 눌렀을 때 실행할 함수
   void onHeartPressed() {
-    // 7.1 CupertinoDialog 열기
-    showCupertinoDialog(
-      context: context,
-      builder: (BuildContext context) {
-        // 8.1 화면 아래에서 300pixel만 CupertinoDatePicker가 차지하게 하고
-        // CupertinoDatePicker 배경을 흰색으로 변경
-        return Align(
-          alignment: Alignment.bottomCenter,
-          child: Container(
-            color: Colors.white,
-            height: 300,
-            // 날짜 선택하는 다이얼로그
-            child: CupertinoDatePicker(
-              mode: CupertinoDatePickerMode.date, // 시간을 제회한 날짜만 선택하기
-              onDateTimeChanged: (DateTime date) {
-                // 9.1 상태 변경시 setState() 함수 실행
-                // 매개변수에 함수를 입력하고 함수에 변경하고 싶은 변숫값을 지정한다.
-                setState(() {
-                  firstDay = date;
-                });
-              }, // 날짜가 변경되면 실행되는 함수
-            ),
-          ),
-        );
-
-        // 날짜 선택하는 다이얼로그
-        // return CupertinoDatePicker(
-        //   mode: CupertinoDatePickerMode.date, // 시간을 제회한 날짜만 선택하기
-        //   onDateTimeChanged: (DateTime date) {},
-        // );
-      },
-      barrierDismissible: true, // 외부(배경) 탭할 경우 다이얼로그 닫기
-    );
-
-    // // 6.1 상태 변경시 setState() 함수 실행
-    // // 매개변수에 함수를 입력하고 함수에 변경하고 싶은 변숫값을 지정한다.
-    // setState(() {
-    //   firstDay = firstDay.subtract(Duration(days: 1)); // firstDay 변수에서 하루 빼기
-    // });
+    // 6.1 상태 변경시 setState() 함수 실행
+    // 매개변수에 함수를 입력하고 함수에 변경하고 싶은 변숫값을 지정한다.
+    setState(() {
+      firstDay = firstDay.subtract(Duration(days: 1)); // firstDay 변수에서 하루 빼기
+    });
   }
 }
 
@@ -99,7 +69,9 @@ class _DDay extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // 1. 테마 불러오기
-    final textTheme = Theme.of(context).textTheme;
+    final textTheme = Theme
+        .of(context)
+        .textTheme;
     final now = DateTime.now(); // 5.3 현재 날짜시간
 
     return Column(
@@ -131,7 +103,9 @@ class _DDay extends StatelessWidget {
         ),
         const SizedBox(height: 16.0),
         Text(
-          'D+${DateTime(now.year, now.month, now.day).difference(firstDay).inDays + 1}', // 5.5. DDay 계산
+          'D+${DateTime(now.year, now.month, now.day)
+              .difference(firstDay)
+              .inDays + 1}', // 5.5. DDay 계산
           style: textTheme.headlineMedium,
         ),
       ],
@@ -148,7 +122,10 @@ class _CoupleImage extends StatelessWidget {
       child: Center(
         child: Image.asset(
           'assets/images/middle_image.png',
-          height: MediaQuery.of(context).size.height / 2, // 이미지 높이를 화면의 반으로 설정
+          height: MediaQuery
+              .of(context)
+              .size
+              .height / 2, // 이미지 높이를 화면의 반으로 설정
         ),
       ),
     );

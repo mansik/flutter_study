@@ -1,6 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+/// 화면 아래에서 300pixel만 CupertinoDatePicker가 차지하게 하고, CupertinoDatePicker 배경을 흰색으로 변경
+///
+/// (8.1~)
+/// - Align widget: 자식 위젯을 어떻게 위치시킬지 정할 수 있다.
+/// - showCupertinoDialog의 barrierDismissible: true (배경을 눌렀을 때 다이얼로그 닫기)
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -52,16 +57,9 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Container(
             color: Colors.white,
             height: 300,
-            // 날짜 선택하는 다이얼로그
             child: CupertinoDatePicker(
               mode: CupertinoDatePickerMode.date, // 시간을 제회한 날짜만 선택하기
-              onDateTimeChanged: (DateTime date) {
-                // 9.1 상태 변경시 setState() 함수 실행
-                // 매개변수에 함수를 입력하고 함수에 변경하고 싶은 변숫값을 지정한다.
-                setState(() {
-                  firstDay = date;
-                });
-              }, // 날짜가 변경되면 실행되는 함수
+              onDateTimeChanged: (DateTime date) {},
             ),
           ),
         );

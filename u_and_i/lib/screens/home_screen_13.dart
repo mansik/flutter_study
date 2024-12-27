@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+/// show CupertinoDialog(7.1~)
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -45,36 +46,13 @@ class _HomeScreenState extends State<HomeScreen> {
     showCupertinoDialog(
       context: context,
       builder: (BuildContext context) {
-        // 8.1 화면 아래에서 300pixel만 CupertinoDatePicker가 차지하게 하고
-        // CupertinoDatePicker 배경을 흰색으로 변경
-        return Align(
-          alignment: Alignment.bottomCenter,
-          child: Container(
-            color: Colors.white,
-            height: 300,
-            // 날짜 선택하는 다이얼로그
-            child: CupertinoDatePicker(
-              mode: CupertinoDatePickerMode.date, // 시간을 제회한 날짜만 선택하기
-              onDateTimeChanged: (DateTime date) {
-                // 9.1 상태 변경시 setState() 함수 실행
-                // 매개변수에 함수를 입력하고 함수에 변경하고 싶은 변숫값을 지정한다.
-                setState(() {
-                  firstDay = date;
-                });
-              }, // 날짜가 변경되면 실행되는 함수
-            ),
-          ),
-        );
-
         // 날짜 선택하는 다이얼로그
-        // return CupertinoDatePicker(
-        //   mode: CupertinoDatePickerMode.date, // 시간을 제회한 날짜만 선택하기
-        //   onDateTimeChanged: (DateTime date) {},
-        // );
+        return CupertinoDatePicker(
+          mode: CupertinoDatePickerMode.date, // 시간을 제회한 날짜만 선택하기
+          onDateTimeChanged: (DateTime date) {},
+        );
       },
-      barrierDismissible: true, // 외부(배경) 탭할 경우 다이얼로그 닫기
     );
-
     // // 6.1 상태 변경시 setState() 함수 실행
     // // 매개변수에 함수를 입력하고 함수에 변경하고 싶은 변숫값을 지정한다.
     // setState(() {
