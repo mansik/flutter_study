@@ -191,7 +191,7 @@ class _DDay extends StatelessWidget {
 
 ### add theme in MaterialApp to main.dart
 
-text widget의 기본 스타일을 변경하기 위해서 theme를 사용
+text widget의 기본 스타일을 변경하기 위해서 theme를 사용 => rerun 해야 적용됨
 
 main.dart에서 MaterialApp에 theme 매개변수를 사용하여, fontFamily, textTheme 정의
 - ThemeData의 매개변수:
@@ -237,6 +237,7 @@ void main() {
 
 ### add style to Text widget in _DDay widget
 
+rerun 해야 적용됨
 1. 테마 불러오기
 2. text widget에 style 적용하기
 3. Icon에 색상 적용하기
@@ -546,7 +547,7 @@ setState()를 이용해서 StatefulWidget의 상태관리를 하며, build()가 
 
 ### 화면 아래에서 300pixel만 CupertinoDatePicker가 차지하게 하고, CupertinoDatePicker 배경을 흰색으로 변경
 
-(8.1~)
+(8.1~) rerun 해야 적용됨
 - Align widget: 자식 위젯을 어떻게 위치시킬지 정할 수 있다.
 - showCupertinoDialog의 barrierDismissible: true (배경을 눌렀을 때 다이얼로그 닫기)
 - /lib/screens/home_screen.dart
