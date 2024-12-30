@@ -34,10 +34,10 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
-  shake: ^2.2.0 # 흔들림 감지 플러그인
+  shake: 2.2.0 # 흔들림 감지 플러그인
 
 dependency_overrides:
-  sensors_plus: ^6.1.0 # shake package사용 시 run에서 오류가 발생하는 것을 해결해 줌..
+  sensors_plus: 6.1.1 # shake package사용 시 run에서 오류가 발생하는 것을 해결해 줌..
 
 dev_dependencies:
   flutter_test:
