@@ -64,12 +64,15 @@ samples, guidance on mobile development, and a full API reference.
 
 ### edit pubspec.yaml and execute `put get`
 
-- shake: 2.2.0 # 흔들림 감지 플러그인
+- shake: ^2.2.0 # 흔들림 감지 플러그인
+- sensors_plus: ^6.1.1
 - assets
 ```yaml
 dependencies:  
-  # sensors_plus: ^1.4.1 # 가속계 및 gyroscope sense
   shake: ^2.2.0 # 흔들림 감지 플러그인
+  
+dependency_overrides:
+  sensors_plus: ^6.1.1 # shake package사용 시 run에서 오류가 발생하는 것을 해결해 줌..
   
 flutter:
   assets:
