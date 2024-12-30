@@ -11,6 +11,7 @@ void main() {
         sliderTheme: SliderThemeData(
           thumbColor: primaryColor, // 노브 색상
           activeTickMarkColor: primaryColor, // 노브가 이동한 트랙 색상
+          inactiveTrackColor: primaryColor.withValues(alpha: 100)
         ),
         // BottomNavigationBar widget theme
         bottomNavigationBarTheme: BottomNavigationBarThemeData(
