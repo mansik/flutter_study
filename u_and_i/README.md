@@ -311,7 +311,7 @@ class _CoupleImage extends StatelessWidget {
 }
 ```
 
-### convert HomeScreen from a StatelessWidget to a State
+### convert HomeScreen from a StatelessWidget to a StatefulWidget
 
 ### add onPress function to Heart button
 
