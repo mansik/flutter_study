@@ -60,7 +60,7 @@ class _RootScreenState extends State<RootScreen> with TickerProviderStateMixin {
     final rand = new Random();
 
     setState(() {
-      number = rand.nextInt(5) + 1;
+      number = rand.nextInt(5) + 1; // 0~5 + 1
     });
   }
 

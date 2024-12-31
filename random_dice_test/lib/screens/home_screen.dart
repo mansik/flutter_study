@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:random_dice/consts/colors.dart';
+import 'package:random_dice_test/consts/colors.dart';
 
-/// 주사위 이미지 + text
-///
-/// 숫자는 RootScreen 위젯에서 정해서 생성자를 통해 입력받음
 class HomeScreen extends StatelessWidget {
   final int number; // 주사위 숫자, RootScreen에서 넘겨 받음
 
-  //const HomeScreen({required this.number, Key? key}) : super(key: key);
-  const HomeScreen({required this.number, super.key}); // 동일함
+  const HomeScreen({required this.number, super.key});
 
   @override
   Widget build(BuildContext context) {

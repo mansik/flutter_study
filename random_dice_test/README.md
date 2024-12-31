@@ -1,10 +1,6 @@
-# random_dice
+# random_dice_test
 
 A new Flutter project.
-
-디지털 주사위
-
-가속도계, 자이로스코프, Sendsor_Plus
 
 ## Getting Started
 
@@ -18,7 +14,6 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
-
 
 ## Features
 
@@ -42,17 +37,17 @@ samples, guidance on mobile development, and a full API reference.
 
 - 가속도계: 특정 물체가 특정 방향으로 이동하는 가속도를 측정하는 기기. 직선 움직임만 측정,  x, y, z축(좌우, 위아래, 앞뒤)
 - gyroscope: x, y, z축의 회전을 측정
-- Sensor_Plus package: 핸드폰의 가속도계와 gyroscope sensor를 사용할 수 있다. 
-핸드폰의 움직임을 측정하려면 정규화(normalization)가 필요하며, x, y, z 각 값을 통합해 전반적인 움직임 수치를 계산해서
-핸드폰을 흔든 정도를 수치화해야 한다. 이를 위해 shake package를 이용한다.
+- Sensor_Plus package: 핸드폰의 가속도계와 gyroscope sensor를 사용할 수 있다.
+  핸드폰의 움직임을 측정하려면 정규화(normalization)가 필요하며, x, y, z 각 값을 통합해 전반적인 움직임 수치를 계산해서
+  핸드폰을 흔든 정도를 수치화해야 한다. 이를 위해 shake package를 이용한다.
 
 
 ## Setps
 
 ### screen structure
 - root screen: 최상위 위젯, TabBarView widget, BottomNavigationBar widget으로 하위 화면을 전환
-  - home screen: 주사위 화면
-  - settings screen: 설정 화면
+    - home screen: 주사위 화면
+    - settings screen: 설정 화면
 
 ### add a constant(상수 추가하기)
 
@@ -211,8 +206,8 @@ void main() {
 ### convert RootScreen from StatelessWidget to StatefulWidget in RootScreen
 
 
-TabBarView는 TabController이 필수이다. 
-TabController을 초기화하려면 vsync 기능이 필요한데 
+TabBarView는 TabController이 필수이다.
+TabController을 초기화하려면 vsync 기능이 필요한데
 이는 State widget에 TrickerProviderMixin을 mixin으로 제공해줘야 사용할 수 있다.
 그래서 StatelessWidget을 StatefulWidget으로 변경하고,
 TabBarView와 bottomNavigationBar을 구현한다.
@@ -253,9 +248,9 @@ class _RootScreenState extends State<RootScreen> {
 
 TabController 사용방법
 - StatefulWidget로 변경 후 State Widget에서 아래 작업
-1. TickerProviderStateMixin 사용 
+1. TickerProviderStateMixin 사용
 2. TabController 선언
-3. controller 초기화 
+3. controller 초기화
 4. controller 등록
 
 - /lib/screens/root_screen.dart
@@ -382,16 +377,16 @@ BottomNavigationBar를 누를 때마다 TabBarVie와 연동하게 하기
 - 3.6. 각 BottomNavigationBar를 눌러 화면 전환 되도록 TabController를 연동
 - 3.6.1. addListener: 컨트롤러 속성이 변경될 때마다 실핼할 함수 등록
 - 3.6.2. 리스너로 사용할 함수. controller 속성이 변경될 때마다 build()를 재실행
-- 3.6.3. dispose: addListener를 사용해서 listener를 등록하면 위젯이 삭제될 때 
-항상 등록된 listener도 같이 삭제해줘야 한다.
-위젯이 삭제될 때 실행되는 dispose()함수를 오버라이드해서 controller에 붙은 리스너를 삭제한다.
+- 3.6.3. dispose: addListener를 사용해서 listener를 등록하면 위젯이 삭제될 때
+  항상 등록된 listener도 같이 삭제해줘야 한다.
+  위젯이 삭제될 때 실행되는 dispose()함수를 오버라이드해서 controller에 붙은 리스너를 삭제한다.
 - 3.6.4. BottomNavigationBar: 현재 화면에 렌더링되는 탭의 인덱스.  
-BottomNavigationBar에서 현재 선택된 상태로 표시해야 하는 BottomNavigationBarItem의 index 설정
-=> TabBarView와 같은 탭의 인덱스를 바라보게 한다.
+  BottomNavigationBar에서 현재 선택된 상태로 표시해야 하는 BottomNavigationBarItem의 index 설정
+  => TabBarView와 같은 탭의 인덱스를 바라보게 한다.
 - 3.6.5. BottomNavigationBar: 탭이 선택될 때마다 실행되는 함수.  
-BottomNavigationBarItem이 눌릴 때마다 실행되는 함수이며 매개변수로 눌린 탭의 인덱스를 전달한다.
-탭을 눌렀을 때 TabBarView와 화면을 동기화해줘야 해서  
-animateTo()함수를 사용해서 애니메이션으로 지정한 탭으로 TabBarView를 전환한다.
+  BottomNavigationBarItem이 눌릴 때마다 실행되는 함수이며 매개변수로 눌린 탭의 인덱스를 전달한다.
+  탭을 눌렀을 때 TabBarView와 화면을 동기화해줘야 해서  
+  animateTo()함수를 사용해서 애니메이션으로 지정한 탭으로 TabBarView를 전환한다.
 
 - /lib/screens/root_screen.dart
 ```dart
@@ -509,7 +504,7 @@ List<Widget> renderChildren() {
 ### implement SettingsScreen
 
 add Slider widget
-- onChanged 매개변수로 입력받은 현잿값을 State에 저장하고: root_screen - onthreshold(double val) 
+- onChanged 매개변수로 입력받은 현잿값을 State에 저장하고: root_screen - onthreshold(double val)
 - 다시 value 매개변수에 같은 값을 입력하는 형태로:  setting_screen - value: threshold
 - silder widget이 구현된다.
 
@@ -565,8 +560,8 @@ class SettingsScreen extends StatelessWidget {
 
 ### renderChildren: from a Container widget to a SettingsScreen widget
 
-RootScreen에서 SettingsScreen 호출, 
-RootScreen에서 Slider 위젯의 현잿값과 onChanged 매개변수를 입력받음 
+RootScreen에서 SettingsScreen 호출,
+RootScreen에서 Slider 위젯의 현잿값과 onChanged 매개변수를 입력받음
 - /lib/screens/root_screen.dart
 ```dart
 class _RootScreenState extends State<RootScreen> with TickerProviderStateMixin {  
@@ -595,7 +590,7 @@ class _RootScreenState extends State<RootScreen> with TickerProviderStateMixin {
 핸드폰을 흔들 때마다 매번 새로운 숫자를 생성
 - HomeScreen()에 들어갈 number 매개변수를 number 변수로 선언(4.1)
 - Shake plugin이 핸드폰 흔들기를 감지할 때마다 실행할 함수를 등록(4.2)
-- 
+-
 
 ```dart
 class _RootScreenState extends State<RootScreen> with TickerProviderStateMixin {
