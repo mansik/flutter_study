@@ -38,8 +38,8 @@ Stack, Positioned, VideoPlayer, ImagePicker, LinearGradient
 
 ## Plugin
 
-- video_player: 2.8.1
-- image_picker: 1.0.4 
+- image_picker: ^1.1.2
+- video_player: ^2.9.2
 
 ## prior knowledge
 
@@ -409,7 +409,7 @@ class _Logo extends StatelessWidget {
 ### implement renderVideo()
 
 add /lib/component/custom_video_player.dart
-- CustomVideoPlayer 위젯은 HomeScreen 위젯에서 선택된 동영상을 재상하는 모든 상태를 관리한다.
+- CustomVideoPlayer 위젯은 HomeScreen 위젯에서 선택된 동영상을 재생하는 모든 상태를 관리한다.
 - 그러므로, SatefulWidget으로 생성한다.
 
 - /lib/component/custom_video_player.dart
