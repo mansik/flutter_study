@@ -2,9 +2,7 @@
 
 A new Flutter project.
 
-디지털 주사위
-
-가속도계, 자이로스코프, Sendsor_Plus
+디지털 주사위, 가속도계, 자이로스코프, Sendsor_Plus
 
 ## Getting Started
 
@@ -32,6 +30,10 @@ samples, guidance on mobile development, and a full API reference.
 에뮬레이터에서는 테스트가 안되며 실제 폰에서 테스트를 해야 한다.
 - 첫 번째 탭에서 핸드폰을 흔들면 주사위의 숫자가 랜텀하게 바뀐다.
 - 두 번째 탭에서 슬라이더를 움직이면 흔들기의 민감도를 정할 수 있다.
+
+## Skill
+
+Shake, BottomNavigationBar, Slider
 
 ## Plugin
 

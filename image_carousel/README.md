@@ -20,6 +20,10 @@ StatefulWidget, Timer.periodic, PageView, SystemChrome, 위젯 생명주기
 - 앱을 실행하면 이미지가 자동으로 롤링
 - 좌우로 스와이프해서 이미지 변경가능
 
+## Skill
+
+Image, PageView, Timer, SystemChrome, StatefulWidget
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.

@@ -23,6 +23,10 @@ Flutter의 2가지 디자인 시스템:
 2. 년, 월, 일을 스크롤해서 원하는 날짜 선택
 3. 배경을 눌러서 날짜 저장하기 및 되돌아오기
 
+## Skill
+
+CupertinoWidget , CupertinoDatePicker, Dialog, StatefulWidget 상태 관리
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.

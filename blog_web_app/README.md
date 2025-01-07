@@ -14,6 +14,10 @@ AppBar, WebView, 콜백 함수, 네이티브 설정
 
 - 앱을 실행하면 웹사이트가 실행
 
+## Skill
+
+StatelessWidget, AppBar, WebView, IconButton
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
