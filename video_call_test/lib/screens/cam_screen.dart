@@ -118,16 +118,40 @@ class _CamScreenState extends State<CamScreen> {
             );
           }
 
-          return Stack(
+          return Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              renderMainView(),
-              Align(
-                alignment: Alignment.topLeft,
-                child: Container(
-                  color: Colors.grey,
-                  height: 160.0,
-                  width: 120.0,
-                  child: renderSubView(),
+              Expanded(
+                child: Stack(
+                  children: [
+                    renderMainView(),
+                    Align(
+                      alignment: Alignment.topLeft,
+                      child: Container(
+                        color: Colors.grey,
+                        height: 160.0,
+                        width: 120.0,
+                        child: renderSubView(),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+
+              // 채널 나가기 버튼
+              Padding(
+                padding: EdgeInsets.all(8.0),
+                child: ElevatedButton(
+                  onPressed: () async {
+                    if (engine != null) {
+                      await engine!.leaveChannel();
+                    }
+                    Navigator.of(context).pop();
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.blue,
+                  ),
+                  child: Text('Leave Channel'),
                 ),
               ),
             ],
