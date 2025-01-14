@@ -27,7 +27,7 @@ class _CamScreenState extends State<CamScreen> {
 
     if (cameraPermission != PermissionStatus.granted ||
         micPermission != PermissionStatus.granted) {
-      throw 'camera or mic permissions is denied';
+      throw 'camera or mic permissions denied';
     }
 
     // 3. 아고라 API를 활성화
@@ -78,23 +78,23 @@ class _CamScreenState extends State<CamScreen> {
           },
         ),
       );
+
+      //3.4 엔진으로 영상을 송출하겠다고 설정
+      await engine!.setClientRole(role: ClientRoleType.clientRoleBroadcaster);
+      // 3.5 동영상 기능을 활성화
+      await engine!.enableVideo();
+      // 3.6 카메라를 이용해 동영상을 화면에 실행
+      await engine!.startPreview();
+
+      // 3.7 채널 입장
+      await engine!.joinChannel(
+        token: tempToken,
+        channelId: channelName,
+        uid: 0, // 내 고유 ID 지정, 0을 입력하면 자동으로 고유 ID가 배정됨.
+        options:
+            ChannelMediaOptions(), // 영상과 관련된 여러 가지 설정을 할 수 있음. 현재 프로젝트에서는 기본 설정 사용
+      );
     }
-
-    //3.4 엔진으로 영상을 송출하겠다고 설정
-    await engine!.setClientRole(role: ClientRoleType.clientRoleBroadcaster);
-    // 3.5 동영상 기능을 활성화
-    await engine!.enableVideo();
-    // 3.6 카메라를 이용해 동영상을 화면에 실행
-    await engine!.startPreview();
-
-    // 3.7 채널 입장
-    await engine!.joinChannel(
-      token: tempToken,
-      channelId: channelName,
-      uid: 0, // 내 고유 ID 지정, 0을 입력하면 자동으로 고유 ID가 배정됨.
-      options:
-          ChannelMediaOptions(), // 영상과 관련된 여러 가지 설정을 할 수 있음. 현재 프로젝트에서는 기본 설정 사용
-    );
 
     return true;
   }

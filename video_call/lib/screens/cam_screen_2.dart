@@ -32,7 +32,7 @@ class _CamScreenState extends State<CamScreen> {
 
     if (cameraPermission != PermissionStatus.granted ||
         micPermission != PermissionStatus.granted) {
-      throw 'camera or mic permissions is denied';
+      throw 'camera or mic permissions denied';
     }
 
     return true;
