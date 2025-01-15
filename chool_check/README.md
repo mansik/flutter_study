@@ -313,14 +313,20 @@ import 'package:geolocator/geolocator.dart';
     
     // 위치 권한 확인
     LocationPermission checkedPermission = await Geolocator.checkPermission();
-    
-    if(checkedPermission == LocationPermission.denied) {
+
+    // 위치 권한 거절됨
+    if (checkedPermission == LocationPermission.denied) {
       // 위치 권한 요청하기
       checkedPermission = await Geolocator.requestPermission();
-      
+
       if (checkedPermission == LocationPermission.denied) {
         return '위치 권한을 허용해주세요.';
-      }      
+      }
+    }
+
+    // 위치 권한 거절됨(앱에서 재요청 불가)
+    if(checkedPermission == LocationPermission.deniedForever) {
+      return '앱의 위치 권한을 설정에서 허가해주세요.';
     }
     
     return '위치 권한이 허가 되었습니다.';    
