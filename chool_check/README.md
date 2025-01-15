@@ -86,7 +86,7 @@ AppBar, Body, Footer로 3등분된 화면
 
 ## Setps
 
-### get the Google Maps API key(https://developers.google.com/maps/documentation/places/android-sdk/cloud-setup?_gl=1*p43t50*_up*MQ..*_ga*MzA3NDI2ODkyLjE3MzY5MjUyMDM.*_ga_NRWSTWS78N*MTczNjkyNTIwMy4xLjEuMTczNjkyNTM2Ny4wLjAuMA..)
+### get the [Google Maps API key](https://developers.google.com/maps/documentation/places/android-sdk/cloud-setup?_gl=1*p43t50*_up*MQ..*_ga*MzA3NDI2ODkyLjE3MzY5MjUyMDM.*_ga_NRWSTWS78N*MTczNjkyNTIwMy4xLjEuMTczNjkyNTM2Ny4wLjAuMA..)
 
 1. connect [google cloud](https://cloud.google.com/gcp)
 2. login -> [무료로 시작하기] 버튼
@@ -111,7 +111,7 @@ dependencies:
 
 ### configuring native setting
 
-[on android] (https://developers.google.com/maps/flutter-package/config?_gl=1*1ueewqf*_up*MQ..*_ga*MTY0MTgwOTExMS4xNzM2OTI1ODI5*_ga_NRWSTWS78N*MTczNjkyNTgyOC4xLjAuMTczNjkyNTgyOS4wLjAuMA..)
+[on android](https://developers.google.com/maps/flutter-package/config?_gl=1*1ueewqf*_up*MQ..*_ga*MTY0MTgwOTExMS4xNzM2OTI1ODI5*_ga_NRWSTWS78N*MTczNjkyNTgyOC4xLjAuMTczNjkyNTgyOS4wLjAuMA..)
 - /android/app/build.gradle
 setting to compileSdk>= 34, minSdk>=20
 ```gradle
