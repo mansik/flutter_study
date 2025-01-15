@@ -236,6 +236,8 @@ class HomeScreen extends StatelessWidget {
 
 - lib/screens/home_screen.dart
 ```dart
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+
 class HomeScreen extends StatelessWidget {
   // initializing the Maps location
   static final LatLng companyLatLng = LatLng(37.5233273, 126.921252);
@@ -298,6 +300,8 @@ class HomeScreen extends StatelessWidget {
 기기 자체의 GPS 사용 권한을 확인, 앱에서 위치 서비스를 사용할 수 있는지 확인 후 권한을 재요청하는 로직
 - lib/screens/home_screen.dart
 ```dart
+import 'package:geolocator/geolocator.dart';
+
   // renderAppBar() 아래에 입력하기
   Future<String> checkPermission() async {
     // 위치 서비스 활성화 여부
