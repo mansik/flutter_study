@@ -26,13 +26,16 @@ android: Pixel 8 API 34
 ## Android Studio shortcut
 
 - *Reformat Code: `Ctrl + Alt + L` 
-- Basic code completion: `Ctrl + Space`
-- *Smart code completion: `Ctrl + Shift + Space`
+- *Basic code completion: `Ctrl + Space`
+- Smart code completion: `Ctrl + Shift + Space`
 - complete statement: `Ctrl + Shift + Enter`
-- *Show intention actions and quick-fixes: `Alt + Enter`
+- *Show Context Actions(Wrap with widget): `Alt + Enter` : 위젯에 커서를 놓고 단축키를 누르면 다른 위젯으로 Wrap 가능
 - *Generate code: `Alt + Ins`
 - *Parameter info: `Ctrl + P` 
-- Quick documentation loop: `Ctrl + Q`
+- *Quick documentation loop: `Ctrl + Q`
+- Quick definition: `Ctrl + Shift + I`
+- View Override Method: `Ctrl + O`
+- 
 - *Extend selection: `Ctrl + W`
 - *Shrink selection: `Ctrl + Shift + W`
 - *Recent files popup: `Ctrl + E`
