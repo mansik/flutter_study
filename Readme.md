@@ -29,7 +29,8 @@ android: Pixel 8 API 34
 - *Basic code completion: `Ctrl + Space`
 - Smart code completion: `Ctrl + Shift + Space`
 - complete statement: `Ctrl + Shift + Enter`
-- *Show Context Actions(Wrap with widget): `Alt + Enter` : 위젯에 커서를 놓고 단축키를 누르면 다른 위젯으로 Wrap 가능
+- *Show Context Actions: `Alt + Enter`
+(Wrap with widget,Remove this Widget, Convert to stateless widget, Convert to stateful widget, Convert to async function)
 - *Generate code: `Alt + Ins`
 - *Parameter info: `Ctrl + P` 
 - *Quick documentation loop: `Ctrl + Q`
