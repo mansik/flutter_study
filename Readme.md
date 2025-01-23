@@ -171,5 +171,45 @@ webview, appbar
 
 stateful, timer.periodic
 
+### u_and_i app: 만난지 며칠
+
+Cepertino Widget, CupertinoDatePicker, Dialog, StateWidget 상태관리
+
+DateTime, Duration, setState(), MediaQuery, Theme, showCupertinoDialog
+
+### randon_dice app: 디지털 주사위
+
+가속도계, sensor_plus, BottomNavigationBar, Slider
+
+TabBarView, Slider, initState(), dart:math
+
+### vid_player app: 동영상 플레이어
+
+화면 회전, 시간 변환, String 패딩
+
+Stack, Positioned, VideoPlayer, ImagePicker, LinearGradient, Align, didUpdateWidget()
+
+### video_call app: 영상 통화
+
+WebRTC, 내비게이션, 아고라 API, 권한 관리
+
+### chool_check app: 출석 체크
+
+구글 지도, Geolocator plugin, Dialog
+
+Circle, Marker
+
+### image_editor app: 포토 스티커
+
+GestureDetector, ImagePicker, InteractiveViewer를 이용한 Transform, hashCode와 == 오퍼레이터 오버라이드
+
+onScaleUpdate, ImageGallerySaverPlus plugin
+
+### cf_tube: 코팩튜브
+
+REST API, JSON, 유튜브 API
+
+Dio, ListView, RefreshIndicator
+
 
 
