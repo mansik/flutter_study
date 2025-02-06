@@ -694,7 +694,7 @@ class _HomeScreenState extends State<HomeScreen> {
               right: 0,
               bottom: 0, // 맨 아래에 Footer 위치 시키기
               child: Footer(
-                OnEmoticonTap: OnEmoticonTap,
+                onEmoticonTap: onEmoticonTap,
               ),
             ),
         ],
@@ -761,7 +761,7 @@ class _HomeScreenState extends State<HomeScreen> {
     print('onDeleteItem');
   }
 
-  void OnEmoticonTap(int index) {}
+  void onEmoticonTap(int index) {}
 
   void onTransform() {}
 }
@@ -774,7 +774,7 @@ class _HomeScreenState extends State<HomeScreen> {
 ```dart
 import 'package:uuid/uuid.dart';
 
-void OnEmoticonTap(int index) async {
+void onEmoticonTap(int index) async {
     setState(() {
       stickers = {
         ...stickers,
