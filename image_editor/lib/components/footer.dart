@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
 //  2. 스티커를 선택할 때마다 실행할 함수의 시그니처
-typedef OnEmotionTap = void Function(int id);
+typedef OnEmoticonTap = void Function(int id);
 
 class Footer extends StatelessWidget {
-  final OnEmotionTap onEmotionTap;
+  final OnEmoticonTap onEmoticonTap;
 
-  const Footer({required this.onEmotionTap, super.key});
+  const Footer({required this.onEmoticonTap, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ class Footer extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 8.0),
               child: GestureDetector(
                 onTap: () {
-                  onEmotionTap(index + 1); // 스티커 선택할 때 실행할 함수
+                  onEmoticonTap(index + 1); // 스티커 선택할 때 실행할 함수
                 },
                 child: Image.asset(
                   'assets/images/emoticon_${index + 1}.png',

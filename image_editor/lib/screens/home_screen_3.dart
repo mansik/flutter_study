@@ -40,7 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
               right: 0,
               bottom: 0, // 맨 아래에 Footer 위치 시키기
               child: Footer(
-                onEmotionTap: onEmotionTap,
+                onEmoticonTap: onEmotionTap,
               ),
             ),
         ],

@@ -356,16 +356,17 @@ import 'dart:io';
 
 스티커를 선택할 footer 위젯 
 - /lib/components/footer.dart
+
 ```dart
 import 'package:flutter/material.dart';
 
 //  2. 스티커를 선택할 때마다 실행할 함수의 시그니처
-typedef OnEmotionTap = void Function(int id);
+typedef OnEmoticonTap = void Function(int id);
 
 class Footer extends StatelessWidget {
-  final OnEmotionTap onEmotionTap;
+  final OnEmoticonTap onEmoticonTap;
 
-  const Footer({required this.onEmotionTap, super.key});
+  const Footer({required this.onEmoticonTap, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -377,18 +378,19 @@ class Footer extends StatelessWidget {
         child: Row(
           children: List.generate(
             7,
-                    (index) => Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8.0),
-              child: GestureDetector(
-                onTap: () {
-                  onEmotionTap(index + 1); // 스티커 선택할 때 실행할 함수
-                },
-                child: Image.asset(
-                  'assets/images/emoticon_${index + 1}.png',
-                  height: 100,
-                ),
-              ),
-            ),
+                    (index) =>
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                      child: GestureDetector(
+                        onTap: () {
+                          onEmoticonTap(index + 1); // 스티커 선택할 때 실행할 함수
+                        },
+                        child: Image.asset(
+                          'assets/images/emoticon_${index + 1}.png',
+                          height: 100,
+                        ),
+                      ),
+                    ),
           ),
         ),
       ),
@@ -430,7 +432,7 @@ class _HomeScreenState extends State<HomeScreen> {
               right: 0,
               bottom: 0,
               child: Footer(
-                onEmotionTap: onEmotionTap,
+                onEmoticonTap: onEmoticonTap,
               ),
             ),
         ],
@@ -438,7 +440,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  void onEmotionTap(int index) {
+  void onEmoticonTap(int index) {
   }
 ```
 
@@ -692,7 +694,7 @@ class _HomeScreenState extends State<HomeScreen> {
               right: 0,
               bottom: 0, // 맨 아래에 Footer 위치 시키기
               child: Footer(
-                onEmotionTap: onEmotionTap,
+                OnEmoticonTap: OnEmoticonTap,
               ),
             ),
         ],
@@ -759,7 +761,7 @@ class _HomeScreenState extends State<HomeScreen> {
     print('onDeleteItem');
   }
 
-  void onEmotionTap(int index) {}
+  void OnEmoticonTap(int index) {}
 
   void onTransform() {}
 }
@@ -772,7 +774,7 @@ class _HomeScreenState extends State<HomeScreen> {
 ```dart
 import 'package:uuid/uuid.dart';
 
-void onEmotionTap(int index) async {
+void OnEmoticonTap(int index) async {
     setState(() {
       stickers = {
         ...stickers,
