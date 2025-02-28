@@ -9,7 +9,8 @@
 
 ## Environment Device Manager
 
-android: Pixel 8 API 34
+android: Pixel 8 API 34, android 14
+android: Pixel 9 API 35, android 15
 
 ## How to create project
 
@@ -22,6 +23,7 @@ android: Pixel 8 API 34
 - components
 - models
 - consts
+- repogitory
   
 ## Android Studio shortcut
 
@@ -48,12 +50,47 @@ android: Pixel 8 API 34
 - 
 - Run: `Shift + F10`
 - hot reload: `Ctrl + \`, Ctrl+ S(저장)하면 저장이 되면서 hot reload가 됨.
-  
+
+## tips.
+
+### (dart v3.7이상) 라인 정렬 기능(project 별로 셋팅 가능)
+
+- analysis_options.yaml
+```yaml
+  include: package:flutter_lints/flutter.yaml
+
+  # 라인 정렬이 page_width에 따라 달라짐. : default page width of 80
+  formatter:
+    page_width: 80
+```
+
+### Gradle DSL(Domain Specific Language)(.gradle)와 Kotlin DSL 설정 파일(.gradle.kts)
+
+* Gradle DSL(Domain Specific Language)선택지에 Groovy 혹은 Kotlin이 있었어나
+* Flutter v3.29에서 Groovy가 삭제되고 Kotlin을 사용하게 되었음
+* Kotlin DSL(.gradle.kts)을 사용한 Gradle 스크립트 설정은 더 타입 안전(정적 타입 검사)하며, 코드 완성 기능을 제공합니다.
+
+* build.gradle: Groovy 방식, Flutter v3.29이전 버전에서 많이 사용되었음
+* build.gradle.kts: Kotlin 방식, Flutter v3.29부터 무조건 사용함.
+
+### Flutter Project에서 android directory를 삭제하고 다시 생성하는 방법(migration from .gradle to .gradle.kts)
+
+1. open project in android studio
+2. open Terminal
+3. your project prompt> rm -r android
+4. your project prompt> flutter create --platforms=android .
+
+### Flutter pub(라이브러리) 사용시 주의 사항
+
+* 각종 NDK, Gradle 설정, jdk 설정등을 맞춰줘야 한다.
+* SDK Management 에서 SDK Tool도 update 해줘야 한다.
+
 ## pubspec.yaml 파일
 
 프로젝트에서 사용할 폰트, 이미지, 외부 플러그인 등을 지정하는데 사용한다.  
 yaml 파일을 수정 후에는 반드시 앱을 다시 실행해야 한다.  
 [youtube](https://youtu.be/1GRKklx4xeo)
+
 
 ## How to add plugin
 
