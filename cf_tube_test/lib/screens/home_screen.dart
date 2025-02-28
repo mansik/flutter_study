@@ -1,7 +1,8 @@
-import 'package:cf_tube/models/video_model.dart';
-import 'package:cf_tube/repository/youtube_repository.dart';
+import 'package:cf_tube_test/components/custom_youtube_player.dart';
+import 'package:cf_tube_test/models/video_model.dart';
+import 'package:cf_tube_test/repository/youtube_repository.dart';
 import 'package:flutter/material.dart';
-import 'package:cf_tube/components/custom_youtube_player.dart';
+import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -18,7 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         centerTitle: true,
         title: const Text('CFTube'),
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.white,
       ),
       body: FutureBuilder<List<VideoModel>>(
         future: YoutubeRepository.getVideos(),
@@ -28,22 +29,20 @@ class _HomeScreenState extends State<HomeScreen> {
             return Center(child: Text(snapshot.error.toString()));
           }
 
-          // 로딩 중일 때 로딩 위젯 보여주기
+          // 로딩 중일 때 로딩 위젯 표시
           if (!snapshot.hasData) {
-            return Center(
-              child: CircularProgressIndicator(),
-            );
+            return Center(child: CircularProgressIndicator());
           }
 
-          // ListView로 동영상을 보여줌
+          // 동영상 플레이어 리턴
           return RefreshIndicator(
-            // 새로고침 기능이 있는 위젯
             onRefresh: () async {
               setState(() {}); // 새로 고침 될 때마다 build() 함수를 재실행
             },
             child: ListView(
-              physics: BouncingScrollPhysics(), // 아래로 당겨서 스크롤할 때 튕기는 애니메이션
-              children: snapshot.data!
+              physics: BouncingScrollPhysics(), // 아래로 당겨서 스크롤 할 때 튕기는 애니메이션
+              children:
+                  snapshot.data!
                       .map((e) => CustomYoutubePlayer(videoModel: e))
                       .toList(),
             ),

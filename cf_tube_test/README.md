@@ -1,4 +1,4 @@
-# cf_tube
+# cf_tube_test
 
 A new Flutter project.
 
@@ -49,22 +49,22 @@ Dio, ListView, youtebe player
 
 - HTTP: request(요청), response(응답)
 - HTTP 통신: GET, POST, PUT, DELETE등 메서드
-  - GET 메서드: 서버에 데이터를 요청, 쿼리 매개변수를 사용, body 사용안함
-  - POST 메서드: 서버에 데이터를 추가, body를 자주 사용
-  - PUT 메서드: 서버에 데이터를 수정, 쿼리 매개변수와 body 사용
-  - DELETE 메서드: 서버에 데이터를 삭제, 쿼리 매개변수와 body 사용
+    - GET 메서드: 서버에 데이터를 요청, 쿼리 매개변수를 사용, body 사용안함
+    - POST 메서드: 서버에 데이터를 추가, body를 자주 사용
+    - PUT 메서드: 서버에 데이터를 수정, 쿼리 매개변수와 body 사용
+    - DELETE 메서드: 서버에 데이터를 삭제, 쿼리 매개변수와 body 사용
 - <client> -> request -> <server>
 - <client> <- response <- <server>
 - URL: http://www.domwin.com:1234/path/to/resource?a=b&x=y
-  - http or https: protocol
-  - www.domwin.com: host
-  - 1234: port
-  - path/to/resource:resource path
-  - a=b&x=y: query
+    - http or https: protocol
+    - www.domwin.com: host
+    - 1234: port
+    - path/to/resource:resource path
+    - a=b&x=y: query
 - HTTP 기반 API 종류
-  - REST API: HTTP의 GET, POST, PUT, DELETE등의 메서드를 사용해서 통신하는 가장 대중적인 API
-  - GraphQL: Graph 구조를 띄고 있으며 클라이언트에서 직접 필요한 데이터를 명시할 수 있는 형태의 통신 방식, 필요한 데이터만 가져올 수 있다는 장점
-  - gRPC: HTTP/2를 사용하는 통신 방식, Protocol Buffers라는 방식을 사용하며 레이턴시를 최소화할 목적으로 설계
+    - REST API: HTTP의 GET, POST, PUT, DELETE등의 메서드를 사용해서 통신하는 가장 대중적인 API
+    - GraphQL: Graph 구조를 띄고 있으며 클라이언트에서 직접 필요한 데이터를 명시할 수 있는 형태의 통신 방식, 필요한 데이터만 가져올 수 있다는 장점
+    - gRPC: HTTP/2를 사용하는 통신 방식, Protocol Buffers라는 방식을 사용하며 레이턴시를 최소화할 목적으로 설계
 
 ### REST API: Respresentation State Transfer API
 
@@ -72,8 +72,8 @@ Dio, ListView, youtebe player
 - REST API는 HTTP의 GET, POST, PUT, DELETE등의 메서드를 사용해서 통신하는 가장 대중적인 API
 - REST API는 균일한 인터페이스, 무상태, 계층화, 캐시 원칙을 준수하는 HTTP API이며, 이를 RESTful API라고 한다.
 - RESTful API 통신
-  - <client> -> GET, POST, PUT, DELETE -> <REST API> -> HTTP request -> <server>
-  - <client> <-   JSON, XML, HTML      <- <REST API> -> HTTP response -> <server>
+    - <client> -> GET, POST, PUT, DELETE -> <REST API> -> HTTP request -> <server>
+    - <client> <-   JSON, XML, HTML      <- <REST API> -> HTTP response -> <server>
 - Flutter framework에서 HTTP 요청을 하는 데 일반적으로 http plugin이나 Dio plugin을 사용한다.
 
 ```dart
@@ -86,7 +86,7 @@ void main() async {
   final deleteResponse = await Dio().delete('http://test.codefactory.ai'); // 4. HTTP Delete 요청
 }
 ```
-    
+
 ### JSON
 
 HTTP 요청에서 body를 구성할 때 사용하는 구조는 크게 XML과 JSON으로 나눈다. XML은 구식으로 현대 API에서는 잘 사용하지 않고
@@ -102,6 +102,32 @@ HTTP 요청에서 body를 구성할 때 사용하는 구조는 크게 XML과 JSO
 REST APT 요청할 때 요청 및 응답 Body에 JSON 구조를 자주 사용한다.
 Flutter에서 JSON 구조로 된 데이터를 응답받으면 직렬화(serialization)를 통해 클래스의 인스턴스로 변환하여 사용할 수 있다.
 
+
+### late 키워드
+
+널이 될 수 없는(non-nullable) 변수가 선언 시점에 초기화되지 않더라도,
+사용되기 전에 반드시 초기화될 것임을 컴파일러에게 약속하는 것입니다.
+즉, "이 변수는 나중에 초기화될 것이니, 사용하기 전에 값이 있을 거라고 믿어줘"  
+
+* 선언 방법(late 키워드 사용)
+```dart
+late String myString;
+``` 
+
+* 초기화 방법(2 가지)
+1. Initializing in initState()  
+```dart
+     @override
+     void initState() {
+       super.initState();
+       myString = "initState에서 가져온 데이터"; // 여기서 초기화
+     } 
+```
+
+2. Lazy Initialization(지연 초기화)
+```dart
+     myString = "안녕하세요!";
+```
 
 ## Layout
 
@@ -128,21 +154,30 @@ dependencies:
 
 ### youtube API setting
 
-we need token of google cloud platform,  
+we need token of google cloud platform,
 
 이전 chool_check app 에서 발행한 토큰을 활용하면 되며, 이 토큰으로 유튜브 API까지 사용하려면 추가 설정이 필요하다.
-1. connect console.cloud.google.com - searching YouTube Data API V3 
+1. connect console.cloud.google.com - searching YouTube Data API V3
 2. YouTube Data API V3-> 'use' click
 3. Apis & Services -> Credentials -> Api Keys -> Edit Api Keys click
 4. Selected APIs -> 'YouTube Data API V3' check (important!!)
 
 ### configuring native setting
 
-on android
+youtube_player_flutter's Requirements
 
-- /android/app/build.gradle  
+####  on flutter version < 3.29
+
+- /android/app/build.gradle
 ```gradle
   minSdk = 19 //flutter.minSdkVersion
+```
+
+#### > on flutter version >= 3.29
+- /android/app/build.gradle.kts
+```gradle.kts
+    ndkVersion = "27.0.12077973"
+    //ndkVersion = flutter.ndkVersion
 ```
 
 ### initialize project
@@ -174,7 +209,7 @@ class HomeScreen extends StatelessWidget {
 
 - 동영상  ID와 제목만 활용
 - lib folder -> create dart file -> /model/video_model.dart
-- lib/model/video_model.dart
+- lib/models/video_model.dart
 ```dart
 /// movie ID and title of youtube api
 class VideoModel {
@@ -192,7 +227,7 @@ class VideoModel {
 
 #### create /lib/component/custom_youtube_player.dart
 - lib folder -> create dart file -> /components/custom_youtube_player.dart
-- /lib/component/custom_youtube_player.dart
+- /lib/components/custom_youtube_player.dart
 ```dart
 import 'package:cf_tube/models/video_model.dart';
 import 'package:flutter/material.dart';
@@ -220,24 +255,54 @@ class _CustomYoutubePlayerState extends State<CustomYoutubePlayer> {
 
 - /lib/components/custom_youtube_player.dart
 ```dart
-import 'package:cf_tube/models/video_model.dart';
+import 'package:cf_tube_test/models/video_model.dart';
 import 'package:flutter/material.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
-class _CustomYoutubePlayerState extends State<CustomYoutubePlayer> {
-  YoutubePlayerController? controller;
+class CustomVideoPlayer extends StatefulWidget {
+  final VideoModel videoModel; // 상위 위젯에서 입력받을 동영상 정보
+
+  const CustomVideoPlayer({required this.videoModel, super.key});
+
+  @override
+  State<CustomVideoPlayer> createState() => _CustomVideoPlayerState();
+}
+
+class _CustomVideoPlayerState extends State<CustomVideoPlayer> {
+  late YoutubePlayerController? _controller;
+
+  /// late 키워드
+  /// 
+  /// 널이 될 수 없는(non-nullable) 변수가 선언 시점에 초기화되지 않더라도,
+  /// 사용되기 전에 반드시 초기화될 것임을 컴파일러에게 약속하는 것입니다.
+  /// 즉, "이 변수는 나중에 초기화될 것이니, 사용하기 전에 값이 있을 거라고 믿어줘"
+  /// 
+  /// - 선언 방법(late 키워드 사용)
+  /// ```dart
+  /// late String myString;
+  /// ```
+  /// - 초기화 방법(2 가지)
+  /// 1. Initializing in initState()
+  /// ```dart
+  /// @override
+  /// void initState() {
+  ///   super.initState();
+  ///   myString = "initState에서 가져온 데이터"; // 여기서 초기화
+  /// }
+  /// 
+  /// 2. Lazy Initialization(지연 초기화)
+  /// ```dart
+  /// myString = "안녕하세요!";
+  /// ```
 
   @override
   void initState() {
     super.initState();
 
-    // 1. YoutubePlayerController 생성
-    controller = YoutubePlayerController(
+    // 1. YoutubePlayerController 생성, 초기화
+    _controller = YoutubePlayerController(
       initialVideoId: widget.videoModel.id,
-      flags: const YoutubePlayerFlags(
-        autoPlay: false,
-        mute: false,
-      ),
+      flags: const YoutubePlayerFlags(autoPlay: true, mute: false),
     );
   }
 
@@ -248,18 +313,15 @@ class _CustomYoutubePlayerState extends State<CustomYoutubePlayer> {
       children: [
         // 2. YoutubePlayer 생성
         YoutubePlayer(
-          controller: controller!,
+          controller: _controller!,
           showVideoProgressIndicator: true,
         ),
         const SizedBox(height: 16.0),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+          padding: const EdgeInsets.symmetric(horizontal: 16.0),
           child: Text(
             widget.videoModel.title,
-            style: const TextStyle(
-              fontSize: 16.0,
-              fontWeight: FontWeight.bold,
-            ),
+            style: const TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
           ),
         ),
         const SizedBox(height: 16.0),
@@ -270,12 +332,10 @@ class _CustomYoutubePlayerState extends State<CustomYoutubePlayer> {
   @override
   void dispose() {
     // 3. YoutubePlayerController 해제
-    controller!.dispose();
-
+    _controller?.dispose();
     super.dispose();
   }
 }
-
 ```
 
 ### implement Home Screen
@@ -475,12 +535,12 @@ add appBar, ListView widget
 
 - /lib/screens/home_screen.dart
 ```dart
-import 'package:cf_tube/models/video_model.dart';
-import 'package:cf_tube/repository/youtube_repository.dart';
+import 'package:cf_tube_test/components/custom_youtube_player.dart';
+import 'package:cf_tube_test/models/video_model.dart';
+import 'package:cf_tube_test/repository/youtube_repository.dart';
 import 'package:flutter/material.dart';
-import 'package:cf_tube/components/custom_youtube_player.dart';
+import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
-/// ListView로 동영상 리스트를 보여주는 화면
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
@@ -491,7 +551,7 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         title: const Text('CFTube'),
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.white,
       ),
       body: FutureBuilder<List<VideoModel>>(
         future: YoutubeRepository.getVideos(),
@@ -501,24 +561,25 @@ class HomeScreen extends StatelessWidget {
             return Center(child: Text(snapshot.error.toString()));
           }
 
-          // 로딩 중일 때 로딩 위젯 보여주기
+          // 로딩 중일 때 로딩 위젯 표시
           if (!snapshot.hasData) {
-            return Center(
-              child: CircularProgressIndicator(),
-            );
+            return Center(child: CircularProgressIndicator());
           }
 
+          // 동영상 플레이어 리턴
           return ListView(
-            physics: BouncingScrollPhysics(),  // 아래로 당겨서 스크롤할 때 튕기는 애니메이션
-            children: snapshot.data!
-                .map((e) => CustomYoutubePlayer(videoModel: e))
-                .toList(),
+            physics: BouncingScrollPhysics(), // 아래로 당겨서 스크롤 할 때 튕기는 애니메이션
+            children:
+                snapshot.data!
+                    .map((e) => CustomYoutubePlayer(videoModel: e))
+                    .toList(),
           );
         },
       ),
     );
   }
 }
+
 ```
 
 ### implement Refresh function in HomeScreen
