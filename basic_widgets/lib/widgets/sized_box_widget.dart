@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 /// Container 위젯을 사용해도 공백을 만들 수 있지만
 /// SizedBox는 const 생성자를 사용했을 때 퍼포먼스에서 이점을 얻을 수 있다.
 class SizedBoxWidgetExample extends StatelessWidget {
+  const SizedBoxWidgetExample({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 ///
 /// 손가락으로 하는 여러 가지 입력을 인식하는 위젯
 class GestureDetectorWidgetExample extends StatelessWidget {
+  const GestureDetectorWidgetExample({super.key});
+
 
   @override
   Widget build(BuildContext context) {

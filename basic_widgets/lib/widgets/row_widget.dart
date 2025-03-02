@@ -19,6 +19,8 @@ import 'package:flutter/material.dart';
 /// .end
 /// .stretch: 반대축 최대한 늘려서 정렬
 class RowWidgetExample extends StatelessWidget {
+  const RowWidgetExample({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

@@ -9,6 +9,8 @@ import 'package:flutter/material.dart';
 /// EdgeInsets.only(top:16.0, bottom:16.0, left:16.0, right:16.0): 각각 따로 padding 적용
 /// EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 16.0): 포지셔널 파라미터를 left, top, right, bottom 순으로 입력
 class PaddingWidgetExample extends StatelessWidget {
+  const PaddingWidgetExample({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

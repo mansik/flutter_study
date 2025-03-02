@@ -9,6 +9,8 @@ import 'package:flutter/material.dart';
 /// FlexFit.tight는 자식 위젯이 차지하는 공간과 관계없이 남은 공간을 모두 차지한다.
 /// Expanded 위젯은 Flexible 위젯의 fit 매개변수에 FlexFit.tight를 기본으로 제공해준 위젯이다.
 class ExpandedWidgetExample extends StatelessWidget {
+  const ExpandedWidgetExample({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

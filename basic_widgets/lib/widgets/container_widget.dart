@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 /// 위젯의 너미와 높이를 지정하거나
 /// 배경이나 테두리를 추가할 때 많이 사용
 class ContainerWidgetExample extends StatelessWidget {
+  const ContainerWidgetExample({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

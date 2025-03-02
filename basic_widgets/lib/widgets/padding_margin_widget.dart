@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 /// margin: 위젯의 바깥에 간격을 추가
 /// padding: 위젯의 안쪽에 간격을 추가
 class PaddingMarginWidgetExample extends StatelessWidget {
+  const PaddingMarginWidgetExample({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

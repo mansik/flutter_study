@@ -7,6 +7,8 @@ import 'package:flutter/material.dart';
 /// 겹친 듯한 효과를 줄 수 있다.
 /// Stack은 children에 위치한 순서대로 위젯을 겹치게 한다.
 class StackWidgetExample extends StatelessWidget {
+  const StackWidgetExample({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

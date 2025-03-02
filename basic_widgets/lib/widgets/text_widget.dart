@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 /// 텍스트 위젯: Text
 // stl 입력후 탭 키하면 StatelessWidget 자동 완성
 class TextWidgetExample extends StatelessWidget {
+  const TextWidgetExample({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

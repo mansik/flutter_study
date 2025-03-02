@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 /// Flexible에 제공된 child가 크기를 최소한으로 차지하거나
 /// flex 매개변수를 이용하여 공간을 차지하는 비율을 지정할 수 있다.
 class FlexibleWidgetExample extends StatelessWidget {
+  const FlexibleWidgetExample({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

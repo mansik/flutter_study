@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 /// 제스처 관련 위젯: FloatingActionButton
 class FloatingActionButtonWidgetExample extends StatelessWidget {
+  const FloatingActionButtonWidgetExample({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

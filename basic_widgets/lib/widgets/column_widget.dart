@@ -18,6 +18,8 @@ import 'package:flutter/material.dart';
 /// .center
 /// .end
 class ColumnWidgetExample extends StatelessWidget {
+  const ColumnWidgetExample({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

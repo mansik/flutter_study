@@ -156,10 +156,10 @@ class _CamScreenState extends State<CamScreen> {
                     // 뒤로 가기
                     Navigator.of(context).pop();
                   },
-                  child: Text('Leave Channel'),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.blue,
                   ),
+                  child: Text('Leave Channel'),
                 ),
               ),
             ],

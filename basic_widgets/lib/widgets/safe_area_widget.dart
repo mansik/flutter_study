@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 ///
 /// 아이폰 노치, 안드로이드 디자인에서 노치 부근을 피해서 위젯을 배치
 class SafeAreaWidgetExample extends StatelessWidget {
+  const SafeAreaWidgetExample({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

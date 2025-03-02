@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 /// 제스처 관련 위젯: TextButton
 // stl 입력후 탭 키하면 StatelessWidget 자동 완성
 class TextButtonWidgetExample extends StatelessWidget {
+  const TextButtonWidgetExample({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

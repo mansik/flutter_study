@@ -2,7 +2,6 @@ import 'package:cf_tube_test/components/custom_youtube_player.dart';
 import 'package:cf_tube_test/models/video_model.dart';
 import 'package:cf_tube_test/repository/youtube_repository.dart';
 import 'package:flutter/material.dart';
-import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
