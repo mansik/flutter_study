@@ -93,10 +93,10 @@ HTTP 요청에서 body를 구성할 때 사용하는 구조는 크게 XML과 JSO
 대부분 JSON 구조를 사용한다. JSON은 키-값 쌍으로 이루어진 데이터 객체를 전달하는 개방형 표준 포맷이다.
 ```json
 {
-  // 'key': 'value'
-  'name': 'code Factory',
-  'languages': ['Javascript', 'Dart'],
-  'age': 2    
+  // "key": "value"
+  "name": "code Factory",
+  "languages": ["Javascript", "Dart"],
+  "age": 2    
 }
 ```
 REST APT 요청할 때 요청 및 응답 Body에 JSON 구조를 자주 사용한다.
