@@ -4,6 +4,8 @@ A new Flutter project.
 
 디지털 주사위, 가속도계, 자이로스코프, Sendsor_Plus
 
+![Image](https://github.com/user-attachments/assets/0581ed31-ab8b-4545-9780-f7c4c4d22fcd)
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.

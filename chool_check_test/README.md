@@ -4,6 +4,8 @@ A new Flutter project.
 
 구글지도, Geolocator plugin, Dialog
 
+![Image](https://github.com/user-attachments/assets/79418169-18e5-455c-bca1-cf920f423d95)
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.

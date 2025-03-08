@@ -6,6 +6,8 @@ blog web app
 
 AppBar, WebView, 콜백 함수, 네이티브 설정
 
+![Image](https://github.com/user-attachments/assets/0832f4f1-2097-4073-8e86-ca1bb7250d68)
+
 ## Features
 
 - 웹뷰를 사용해서 앱에서 웹사이트 실행하기

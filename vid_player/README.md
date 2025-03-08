@@ -5,6 +5,8 @@ A new Flutter project.
 화면 회전, 시간 변환, String 패팅
 - video_player 플러그인 이름과 겹치지 않게 작명에 주의
 
+![Image](https://github.com/user-attachments/assets/c98fafd2-f7df-4bf7-8acc-9dc9c90e3d3c)
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.

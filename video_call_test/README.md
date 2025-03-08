@@ -5,6 +5,8 @@ A new Flutter project.
 영상 통화 앱
 - WebRTC, 내비게이션, 아고라 API
 
+![Image](https://github.com/user-attachments/assets/d0d99634-94ca-4079-a9f9-274f2ca9c354)
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.

@@ -6,6 +6,8 @@ photo sticker: 이미지 수정
 
 GestureDetector
 
+![Image](https://github.com/user-attachments/assets/266d70ed-c03e-4076-a1cc-7fc90321f986)
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.

@@ -6,6 +6,8 @@ image_carousel 연습
 
 stateful, timer.periodic
 
+![Image](https://github.com/user-attachments/assets/5276cc9f-b7ed-447d-83a0-fcd9d54101fd)
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.

@@ -12,6 +12,8 @@ Flutter의 2가지 디자인 시스템:
 
 [StatefulWidget, StatelessWidget LifeCytle](https://parkjh7764.tistory.com/185)
 
+![Image](https://github.com/user-attachments/assets/ecff41ec-1884-4dc9-a4ae-110a08f88fd4)
+
 ## Features
 
 - 사용자가 직접 원하는 날짜 선택

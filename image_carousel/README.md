@@ -8,6 +8,8 @@ p. 220
 
 StatefulWidget, Timer.periodic, PageView, SystemChrome, 위젯 생명주기 
 
+![Image](https://github.com/user-attachments/assets/5276cc9f-b7ed-447d-83a0-fcd9d54101fd)
+
 ## Features
 
 - 좌우로 스와이프해서 이미지 변경
