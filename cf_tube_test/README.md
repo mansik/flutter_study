@@ -87,6 +87,8 @@ void main() async {
 }
 ```
 
+![Image](https://github.com/user-attachments/assets/3ec33a59-cfa0-4c03-9f54-82cc6ca6388a)
+
 ### JSON
 
 HTTP 요청에서 body를 구성할 때 사용하는 구조는 크게 XML과 JSON으로 나눈다. XML은 구식으로 현대 API에서는 잘 사용하지 않고
