@@ -248,5 +248,10 @@ REST API, JSON, 유튜브 API
 
 Dio, ListView, RefreshIndicator
 
+### soul_talk: 나만의 채팅봇
+
+Gemini API, Isar Database, StreamBuilder
+
+
 
 
