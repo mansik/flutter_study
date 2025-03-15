@@ -48,7 +48,8 @@ dependencies:
   isar_flutter_libs: ^3.1.0+1
   path_provider: ^2.1.5
   google_generative_ai: ^0.4.6
-  get_it: ^8.0.3 
+  get_it: ^8.0.3
+  intl: ^0.20.2
 
 dev_dependencies:
   build_runner: ^2.4.15

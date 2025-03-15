@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:google_generative_ai/google_generative_ai.dart';
+import 'package:intl/intl.dart';
 import 'package:isar/isar.dart';
 import 'package:soul_talk/consts/gemini_api.dart';
 import 'package:soul_talk/models/message_model.dart';
@@ -62,6 +63,12 @@ class _HomeScreenState extends State<HomeScreen> {
                   fireImmediately: true,
                 ),
                 builder: (context, snapshot) {
+                  if (snapshot.hasError) {
+                    return Center(
+                      child: Text('Error loading messages: ${snapshot.error}'),
+                    );
+                  }
+
                   final messages = snapshot.data ?? [];
 
                   // WidgetsBinding.instance.addPostFrameCallback() 함수를 사용하여
@@ -187,7 +194,7 @@ class _HomeScreenState extends State<HomeScreen> {
       /// 3. 제미나이에게 메시지를 보내고 응답을 Isar에 저장
       ///
       // Stream으로 받아지는 메시지를 지속적으로 추가할 문자열
-      String message = '';
+      String responseMessage = '';
 
       // generateContentStream을 실행하면 Stream으로 응답을 받을 수 있다.
       model
@@ -196,13 +203,13 @@ class _HomeScreenState extends State<HomeScreen> {
             (event) async {
               // 응답 메시지가 있다면 message 변수를 추가한다.
               if (event.text != null) {
-                message += event.text!;
+                responseMessage += event.text!;
               }
 
               // message 변수를 기반으로 MessageModel을 생성한다.
-              final model = MessageModel(
+              final modelMessage = MessageModel(
                 isMine: false,
-                message: message,
+                message: responseMessage,
                 //point: null,
                 date: DateTime.now(),
               );
@@ -215,12 +222,12 @@ class _HomeScreenState extends State<HomeScreen> {
               ///
               // 이미 메시지를 생성한 적이 있다면 model 변수에 id 퍼로퍼티를 추가한다.
               if (currentModelMessageId != null) {
-                model.id = currentModelMessageId!;
+                modelMessage.id = currentModelMessageId!;
               }
 
               // 메시지를 저장하고 반환받은 ID값을 currentModelMessageId에 할당한다.
               currentModelMessageId = await isar.writeTxn<int>(
-                () => isar.messageModels.put(model),
+                () => isar.messageModels.put(modelMessage),
               );
             },
 
@@ -314,11 +321,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   // String으로 반환된 날짜가 다를 경우 true 반환
   bool shouldDrawDate(DateTime dateTime1, DateTime dateTime2) {
-    return getStringDate(dateTime1) != getStringDate(dateTime2);
-  }
-
-  // DateTime을 '2025-11-12'의 String으로 변환
-  String getStringDate(DateTime dateTime1) {
-    return '${dateTime1.year}-${dateTime1.month}-${dateTime1.day}';
+    final formatter = DateFormat('yyyy-MM-dd');
+    return formatter.format(dateTime1) != formatter.format(dateTime2);
   }
 }
