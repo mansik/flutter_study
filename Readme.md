@@ -19,12 +19,69 @@ android: Pixel 9 API 35, android 15
 
 ## Project fold structure
 
-- screens
-- components
-- models
-- consts
-- repogitory
-  
+There are two popular means of organizing code:
+1. By feature - The classes needed for each feature are grouped together. For example, you might have an auth directory, which would contain files like auth_viewmodel.dart, login_usecase.dart, logout_usecase.dart, login_screen.dart, logout_button.dart, etc.
+2. By type - Each "type" of architecture is grouped together. For example, you might have directories such as repositories, models, services, and viewmodels.
+
+**The architecture recommended in this guide lends itself to a combination of the two. Data layer objects (repositories and services) aren't tied to a single feature, while UI layer objects (views and view models) are. The following is how the code is organized within the Compass application.**
+
+[Package structure](https://docs.flutter.dev/app-architecture/case-study)
+```
+lib
+├─┬─ ui
+│ ├─┬─ core
+│ │ ├─┬─ ui
+│ │ │ └─── <shared widgets>
+│ │ └─── themes
+│ └─┬─ <FEATURE NAME>
+│   ├─┬─ view_model
+│   │ └─── <view_model class>.dart
+│   └─┬─ widgets
+│     ├── <feature name>_screen.dartPackage structure
+│     └── <other widgets>
+├─┬─ domain
+│ └─┬─ models
+│   └─── <model name>.dart
+├─┬─ data
+│ ├─┬─ repositories
+│ │ └─── <repository class>.dart
+│ ├─┬─ services
+│ │ └─── <service class>.dart
+│ └─┬─ model
+│   └─── <api model class>.dart
+├─── config
+├─── utils
+├─── routing
+├─── main_staging.dart
+├─── main_development.dart
+└─── main.dart
+
+// The test folder contains unit and widget tests
+test
+├─── data
+├─── domain
+├─── ui
+└─── utils
+
+// The testing folder contains mocks other classes need to execute tests
+testing
+├─── fakes
+└─── models
+```
+
+### By type
+
+```
+lib
+├─┬─ screens
+│ └─── <feature name>_screen.dart
+├─┬─ widgets
+├─┬─ components
+├─┬─ models
+├─┬─ consts
+├─┬─ repogitories
+```
+
 ## Android Studio shortcut
 
 - *Reformat Code: `Ctrl + Alt + L` 
