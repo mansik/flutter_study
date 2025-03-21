@@ -262,7 +262,9 @@ void setupLocator() {
 3. getit 사용
 
 
-```dartimport 'package:flutter/material.dart';
+- /lib/main.dart
+```dart
+import 'package:flutter/material.dart';
 import 'package:get_it_test/locators/locator.dart';
 import 'package:get_it_test/models/album_model.dart';
 import 'package:get_it_test/services/album_service.dart';

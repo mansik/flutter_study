@@ -310,5 +310,19 @@ Dio, ListView, RefreshIndicator
 Gemini API, Isar Database, StreamBuilder
 
 
+### state management: BLoC
 
+BLoC, rxdart, http, ListView, ListTile, StreamBuilder
+
+### state management: Provider
+
+Provider, http, ListView
+
+### 의존성 주입(Dependency Injection, DI) Library: GetIt
+
+get_it, http, ListView, ListTile, FutureBuilder
+
+- GetIt은 객체의 생명 주기와 의존성을 관리하는 DI(Dependency Injection) 라이브러리입니다.
+- 단독으로 상태 관리를 수행하지 않으며, Provider, Riverpod, Bloc과 함께 사용하는 것이 일반적입니다.
+- 만약 간단한 상태 관리만 필요하다면 GetIt 대신 Provider나 GetX를 사용하는 것이 더 편리할 수 있음.
 
