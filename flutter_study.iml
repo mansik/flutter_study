@@ -81,6 +81,12 @@
       <excludeFolder url="file://$MODULE_DIR$/video_call_test/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/video_call_test/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/video_call_test/build" />
+      <excludeFolder url="file://$MODULE_DIR$/bloc_test/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/bloc_test/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/bloc_test/build" />
+      <excludeFolder url="file://$MODULE_DIR$/provider_test/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/provider_test/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/provider_test/build" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Dart SDK" level="project" />
