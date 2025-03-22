@@ -21,9 +21,14 @@ class AlbumServiceImplementation implements AlbumService {
       );
     }
 
+    final responseBody = response.body;
+    if (responseBody.isEmpty) {
+      throw Exception('Response body is empty');
+    }
+
     final List<Album> result =
         jsonDecode(
-          response.body,
+          responseBody,
         ).map<Album>((json) => Album.fromJson(json)).toList();
     return result;
   }
