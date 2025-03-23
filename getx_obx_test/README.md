@@ -49,11 +49,12 @@ Flutter 개발을 더욱 간단하고 효율적으로 만들기 위해 설계되
 #### 2. 상태 관리 (State Management)
 
 - GetX는 세 가지 방식의 상태 관리 방법을 제공합니다.
+- Get has two different state managers: the simple state manager (we'll call it GetBuilder) and the reactive state manager (GetX/Obx)
 
 1) 간단한 상태 관리 (GetBuilder)
 - 상태가 변경될 때 UI를 다시 그리는 방식.
 - GetxController를 상속받은 클래스를 생성하고, update()를 호출하여 UI를 갱신.
-2) 반응형 상태 관리 (Obx)
+2) 반응형 상태 관리 (Obx/GetX)
 - Rx 변수를 사용하여 상태 변화를 감지하고 자동으로 UI를 업데이트.
 - Rx 변수를 사용하면 update() 호출 없이 자동 반영됨.
 3) 고급 상태 관리 (GetX)
@@ -138,7 +139,10 @@ class CounterScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("GetX Obx Counter")),
-      body: Center(child: Obx(() => Text("Count: ${counterController.count}"))),
+      body: Center(
+        // 3. Rx 변수 사용
+        child: Obx(() => Text("Count: ${counterController.count}")),
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: counterController.increment,
         child: Icon(Icons.add),

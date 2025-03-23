@@ -24,7 +24,10 @@ class CounterScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("GetX Obx Counter")),
-      body: Center(child: Obx(() => Text("Count: ${counterController.count}"))),
+      body: Center(
+        // 3. Rx 변수 사용
+        child: Obx(() => Text("Count: ${counterController.count}")),
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: counterController.increment,
         child: Icon(Icons.add),
