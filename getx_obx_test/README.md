@@ -57,6 +57,7 @@ Flutter 개발을 더욱 간단하고 효율적으로 만들기 위해 설계되
 2) 반응형 상태 관리 (Obx/GetX)
 - Rx 변수를 사용하여 상태 변화를 감지하고 자동으로 UI를 업데이트.
 - Rx 변수를 사용하면 update() 호출 없이 자동 반영됨.
+- GetBuilder, GetX와 다르게 Obx안에서 Controller를 초기화 할 수 없다.
 3) 고급 상태 관리 (GetX)
 - GetX 위젯을 사용하면 특정 Controller를 감시할 수 있음.
 - GetX는 Obx보다 세밀한 상태 관리를 할 수 있음.
