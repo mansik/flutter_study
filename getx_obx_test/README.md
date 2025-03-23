@@ -50,6 +50,7 @@ Flutter 개발을 더욱 간단하고 효율적으로 만들기 위해 설계되
 
 - GetX는 세 가지 방식의 상태 관리 방법을 제공합니다.
 - Get has two different state managers: the simple state manager (we'll call it GetBuilder) and the reactive state manager (GetX/Obx)
+- Rx(ReactiveX), Obs(Observable)
 
 1) 간단한 상태 관리 (GetBuilder)
 - 상태가 변경될 때 UI를 다시 그리는 방식.
@@ -61,6 +62,7 @@ Flutter 개발을 더욱 간단하고 효율적으로 만들기 위해 설계되
 3) 고급 상태 관리 (GetX)
 - GetX 위젯을 사용하면 특정 Controller를 감시할 수 있음.
 - GetX는 Obx보다 세밀한 상태 관리를 할 수 있음.
+
 
 #### 3. 라우팅 (Navigation)
 
