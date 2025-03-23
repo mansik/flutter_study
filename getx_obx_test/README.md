@@ -78,8 +78,6 @@ Flutter 개발을 더욱 간단하고 효율적으로 만들기 위해 설계되
 
 ## Steps
 
-home_screen -> main
-
 ### modify pubspec.yaml
 ```
 dependencies:
@@ -134,15 +132,15 @@ import 'package:getx_obx_test/controllers/count_controller.dart';
 class CounterScreen extends StatelessWidget {
   // 2. 컨트롤러 인스턴스 생성(Get.put()를 사용하여 객체 주입)
   // Get.put()은 GetX에서 객체를 전역에서 관리할 때 사용(Dependency Injection)
-  final CounterController controller = Get.put(CounterController());
+  final CounterController counterController = Get.put(CounterController());
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("GetX Obx Counter")),
-      body: Center(child: Obx(() => Text("Count: ${controller.count}"))),
+      body: Center(child: Obx(() => Text("Count: ${counterController.count}"))),
       floatingActionButton: FloatingActionButton(
-        onPressed: controller.increment,
+        onPressed: counterController.increment,
         child: Icon(Icons.add),
       ),
     );
