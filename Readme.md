@@ -299,26 +299,26 @@ GestureDetector, ImagePicker, InteractiveViewer를 이용한 Transform, hashCode
 
 onScaleUpdate, ImageGallerySaverPlus plugin
 
-### cf_tube: 코팩튜브
+### cf_tube app: 코팩튜브
 
 REST API, JSON, 유튜브 API
 
 Dio, ListView, RefreshIndicator
 
-### soul_talk: 나만의 채팅봇
+### soul_talk app: 나만의 채팅봇
 
 Gemini API, Isar Database, StreamBuilder
 
 
-### state management: BLoC
+### bloc_test app: state management: BLoC
 
 BLoC, rxdart, http, ListView, ListTile, StreamBuilder
 
-### state management: Provider
+### provider_test app: state management: Provider
 
 Provider, http, ListView
 
-### 의존성 주입(Dependency Injection, DI) Library: GetIt
+### getit_test app: 의존성 주입(Dependency Injection, DI) Library: GetIt
 
 get_it, http, ListView, ListTile, FutureBuilder
 
@@ -326,3 +326,18 @@ get_it, http, ListView, ListTile, FutureBuilder
 - 단독으로 상태 관리를 수행하지 않으며, Provider, Riverpod, Bloc과 함께 사용하는 것이 일반적입니다.
 - 만약 간단한 상태 관리만 필요하다면 GetIt 대신 Provider나 GetX를 사용하는 것이 더 편리할 수 있음.
 
+### riverpot_test app: state management: Riverpot
+
+riverpot (Provider를 개선)
+
+### getx_getbuilder_test app: state management: Getx - GetBuilder
+
+GetBuilder(간단한 상태 관리)
+
+### getx_obx_test app: state management: Getx - Obx
+
+Obx(반응형 상태 관리)
+
+### getx_getx_test app: state management: Getx - GetxController
+
+GetxController(반응응 상태 관리, 고급 상태 관리)

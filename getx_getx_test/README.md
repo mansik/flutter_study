@@ -25,7 +25,7 @@ GetX는 GetBuilder(간단한 상태 관리), Obx(반응형 상태 관리), GetxC
 
 ## Skill
 
-getx: Getx Widget(고급 상태 관리)
+getx: GetxController(고급 상태 관리)
 
 ## Plugin(pub.dev)
 
