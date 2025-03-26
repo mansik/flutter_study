@@ -52,36 +52,39 @@ api_provider.dart는 API 호출과 응답 데이터 처리, 모델 변환 등에
 
 ### Provider
 
-> 상태 관리 패턴 중 하나인 Provider에 대해 자세히 설명해줘
-
 ![Provider](provider.png)
+
 1. 상태(State)란?
-   Flutter에서 **상태(State)**란 UI가 유지해야 하는 데이터를 의미합니다.
-   예를 들어, 버튼을 클릭하면 화면의 텍스트가 변경되는 경우, 이 텍스트의 값이 상태입니다.
+
+Flutter에서 **상태(State)**란 UI가 유지해야 하는 데이터를 의미합니다.
+예를 들어, 버튼을 클릭하면 화면의 텍스트가 변경되는 경우, 이 텍스트의 값이 상태입니다.
 
 Flutter는 StatefulWidget을 통해 상태를 관리할 수 있지만, 복잡한 애플리케이션에서는 전역 상태 관리가 필요합니다.
 이때 Provider 패턴을 사용하면 효율적으로 상태를 관리할 수 있습니다.
 
 2. Provider란?
-   Provider는 Flutter에서 공식적으로 권장하는 상태 관리 패턴 중 하나로,
-   단순하고 성능이 뛰어나며, 코드가 깔끔해지는 장점이 있습니다.
 
-🔹 Provider는 ChangeNotifier와 결합하여 구독(Subscribe) 방식으로 UI를 자동 업데이트합니다.
-🔹 상태를 전역적으로 공유할 수 있어, 여러 위젯에서 동일한 데이터를 쉽게 사용 가능합니다.
-🔹 BuildContext를 사용하지 않고도 상태를 관리할 수 있어 성능 최적화가 가능합니다.
+Provider는 Flutter에서 공식적으로 권장하는 상태 관리 패턴 중 하나로,
+단순하고 성능이 뛰어나며, 코드가 깔끔해지는 장점이 있습니다.
+
+- Provider는 ChangeNotifier와 결합하여 구독(Subscribe) 방식으로 UI를 자동 업데이트합니다.
+- 상태를 전역적으로 공유할 수 있어, 여러 위젯에서 동일한 데이터를 쉽게 사용 가능합니다.
+- BuildContext를 사용하지 않고도 상태를 관리할 수 있어 성능 최적화가 가능합니다.
 
 3. Provider의 핵심 개념
-   ✅ 1) ChangeNotifier
-   ChangeNotifier는 상태 변경을 감지하고, UI를 다시 빌드하도록 알리는 역할을 합니다.
-   **notifyListeners()**를 호출하면 변경 사항이 UI에 반영됩니다.
-   ✅ 2) ChangeNotifierProvider
-   Provider를 등록하는 역할을 합니다.
-   MultiProvider를 사용하면 여러 개의 Provider를 등록할 수 있습니다.
-   ✅ 3) Consumer
-   Provider로부터 데이터를 구독하여, 상태가 변경되면 UI를 자동으로 업데이트합니다.
+   1) ChangeNotifier
+      - ChangeNotifier는 상태 변경을 감지하고, UI를 다시 빌드하도록 알리는 역할을 합니다.
+      - **notifyListeners()**를 호출하면 변경 사항이 UI에 반영됩니다.
+   2) ChangeNotifierProvider
+      - Provider를 등록하는 역할을 합니다.
+      - MultiProvider를 사용하면 여러 개의 Provider를 등록할 수 있습니다.
+   3) Consumer
+      - Provider로부터 데이터를 구독하여, 상태가 변경되면 UI를 자동으로 업데이트합니다.
 
 4. Provider의 장점과 단점
+
    ✅ 장점
+
    ✔ Flutter 공식 상태 관리 라이브러리로 신뢰성이 높음
    ✔ 코드가 깔끔하고 가독성이 뛰어남
    ✔ ChangeNotifier 기반이라 이해하기 쉬움
@@ -89,11 +92,13 @@ Flutter는 StatefulWidget을 통해 상태를 관리할 수 있지만, 복잡한
    ✔ Consumer, Selector 등을 사용해 UI 업데이트 최적화 가능
 
    ❌ 단점
+
    ✖ 규모가 매우 커지면 코드가 복잡해질 수 있음
    ✖ Flutter 3.10 이후 Riverpod이 더 선호됨 (Provider보다 의존성이 더 낮음)
    ✖ 객체 수명이 자동 관리되지 않음, 직접 dispose() 처리가 필요할 수도 있음
 
 ### main.dart의 역할: main.dart는 애플리케이션의 진입점이며, 주로 다음과 같은 역할을 합니다.
+
 - GetIt 초기화 및 의존성 등록 (AlbumBloc, AlbumRepository, AlbumApiProvider 등)
 - 최상위 위젯 (MyApp) 구성 및 실행
 - 그 외 애플리케이션의 전반적인 설정 및 초기화
