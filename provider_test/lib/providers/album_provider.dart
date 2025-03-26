@@ -12,7 +12,7 @@ class AlbumProvider with ChangeNotifier {
   static const String _baseUrl = 'https://jsonplaceholder.typicode.com';
   static const String _albumsEndpoint = '/albums';
 
-  List<Album> getAlbums() {
+  List<Album> fetchAlbums() {
     _fetchAlbums();
     return _albums;
   }
