@@ -30,7 +30,7 @@ samples, guidance on mobile development, and a full API reference.
 
 ## Skill
 
-Provider
+MVVM architecture, Provider, Dependency Injection
 
 ## Plugin(pub.dev)
 
@@ -121,6 +121,7 @@ models -> data_sources -> repositories -> view_models -> views -> main
 
 ### Directory structure
 
+```
 lib/
 ├── data/                  # 데이터 관련
 │   ├── models/            # 데이터 모델
@@ -134,7 +135,7 @@ lib/
 ├── views/                 # UI (View)
 │   └── album_view.dart
 └── main.dart              # 앱 시작점
-
+```
 
 ### add plugins and assets in pubspec.yaml, `pub get`
 
