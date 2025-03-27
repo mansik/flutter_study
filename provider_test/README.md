@@ -170,7 +170,7 @@ import 'package:provider_test/models/album_model.dart';
 class AlbumProvider with ChangeNotifier {
   final List<Album> _albums = [];
 
-  List<Album> getAlbums() {
+  List<Album> fetchAlbums() {
     _fetchAlbums();
     return _albums;
   }
@@ -222,7 +222,7 @@ class _AlbumViewState extends State<AlbumView> {
       appBar: AppBar(title: const Text('Albums')),
       body: Consumer<AlbumProvider>( // AlbumProvider 상태를 구독하고 UI를 자동 업데이트한다.
         builder: (context, provider, child) {
-          _albums = provider.getAlbums();
+          _albums = provider.fetchAlbums();
           return ListView.builder(
             itemCount: _albums.length,
             itemBuilder: (BuildContext context, int index) {
