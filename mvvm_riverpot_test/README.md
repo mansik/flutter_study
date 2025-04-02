@@ -257,7 +257,7 @@ class AlbumRepository {
 
 // AlbumRepository를 제공하기 위한 provider
 final albumRepositoryProvider = Provider<AlbumRepository>((ref) {
-  final albumDataSource = ref.watch(albumDataSourceProvider);
+  final albumDataSource = ref.read(albumDataSourceProvider);
   return AlbumRepository(albumDataSource: albumDataSource);
 });
 ```
@@ -265,16 +265,25 @@ final albumRepositoryProvider = Provider<AlbumRepository>((ref) {
 #### provider를 riverpot으로 마이그레이션 작업
 
 1. add final albumRepositoryProvider = Provider<AlbumRepository>((ref) {
-   final albumDataSource = ref.watch(albumDataSourceProvider);
+   final albumDataSource = ref.read(albumDataSourceProvider);
    return AlbumRepository(albumDataSource: albumDataSource);
    });  // AlbumRepository를 제공하기 위한 provider
 
 2. albumRepositoryProvider:
    - Provider<AlbumRepository>를 사용하여 AlbumRepository의 인스턴스를 제공합니다.
-   - final albumDataSource = ref.watch(albumDataSourceProvider); 이 부분이 핵심입니다.
-     * ref.watch(albumDataSourceProvider)를 사용하여 albumDataSourceProvider가 제공하는 AlbumDataSource 인스턴스를 가져옵니다.
-     * Riverpod에서는 watch를 사용하면 해당 provider의 값이 변경될 때마다 의존하는 provider를 재빌드 합니다.
-     * 이 코드는 albumDataSourceProvider에 의존하고 있음을 명시적으로 나타냅니다. 즉 albumDataSourceProvider에 변화가 있을 시 재빌드 된다는 의미입니다.
+   - final albumDataSource = ref.read(albumDataSourceProvider); 이 부분이 핵심입니다.
+     * ref.read(albumDataSourceProvider)를 사용하여 albumDataSourceProvider가 제공하는 AlbumDataSource 인스턴스를 가져옵니다.
+     * ref.watch: Provider의 값이 변경될 때마다 리빌드가 필요한 경우 사용.
+     * ref.read: Provider의 값이 한 번만 필요하고, 리빌드가 필요 없는 경우 사용.
+     * albumRepositoryProvider의 목적은 다음과 같습니다.
+       1. AlbumDataSource의 인스턴스를 가져온다.
+       2. AlbumDataSource를 생성자의 인자로 넘겨서 AlbumRepository를 생성한다.
+       3. 생성한 AlbumRepository를 반환한다. 
+     * 이러한 목적을 봤을 때, 
+     * albumDataSourceProvider의 값이 변경된다고 해서 albumRepositoryProvider가 다시 빌드될 필요는 없습니다. 
+     * AlbumRepository는 그저 AlbumDataSource의 인스턴스를 받아서 사용할 뿐이고, 그 내부의 값에는 관심이 없습니다. 
+     * 즉 AlbumRepository에는 albumDataSourceProvider의 내부 값에 의존적인 것이 아무것도 없습니다.
+
    - return AlbumRepository(albumDataSource: albumDataSource);
      * 가져온 AlbumDataSource 인스턴스를 생성자에 넣어 AlbumRepository 인스턴스를 생성하고 반환합니다.
 

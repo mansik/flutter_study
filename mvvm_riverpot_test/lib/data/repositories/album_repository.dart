@@ -17,6 +17,6 @@ class AlbumRepository {
 
 // AlbumRepository를 제공하기 위한 provider
 final albumRepositoryProvider = Provider<AlbumRepository>((ref) {
-  final albumDataSource = ref.watch(albumDataSourceProvider);
+  final albumDataSource = ref.read(albumDataSourceProvider);
   return AlbumRepository(albumDataSource: albumDataSource);
 });
