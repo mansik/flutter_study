@@ -17,7 +17,7 @@ android: Pixel 9 API 35, android 15
 1. new flutter project -> empty project로 생성 후
 2. 개별 프로젝트는 이 프로젝트의 아래에 위치해서 생성함
 
-## Project fold structure
+## [Project fold structure](https://docs.flutter.dev/app-architecture/case-study)
 
 There are two popular means of organizing code:
 1. By feature - The classes needed for each feature are grouped together. For example, you might have an auth directory, which would contain files like auth_viewmodel.dart, login_usecase.dart, logout_usecase.dart, login_screen.dart, logout_button.dart, etc.
@@ -25,7 +25,7 @@ There are two popular means of organizing code:
 
 **The architecture recommended in this guide lends itself to a combination of the two. Data layer objects (repositories and services) aren't tied to a single feature, while UI layer objects (views and view models) are. The following is how the code is organized within the Compass application.**
 
-[Package structure](https://docs.flutter.dev/app-architecture/case-study)
+**Package structure**
 ```
 lib
 ├─┬─ ui
